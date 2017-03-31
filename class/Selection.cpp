@@ -1,31 +1,27 @@
 #include "Selection.h"
+#include "Chemin.h"
 
 Selection:: Selection()
 {
-  nombre = 0;
-  TailleChemin = NULL;
-  ListeChemin = NULL;
+  NombreChemins = 0;
+  Chemins = 0;
 }
 
-Selection:: Selection(int nombre, int * taillec, int ** Listec)
+Selection:: Selection(int nombre, Chemin * chemins)
 {
-  TailleChemin = new int[nombre];
+  Chemins = new Chemin[NombreChemins];
   for (int i=0; i<nombre; i++)
     {
-      TailleChemin[i] = taillec[i];
-    }
-  for (int i=0; i<nombre; i++)
-    {
-      ListeChemin[i] = new int[TailleChemin[i]];
-      for (int j=0; j<TailleChemin[i]; j++)
-	{
-	  ListeChemin[i][j] = Listec[i][j];
-	}
+      Chemins[i] = chemins[i];
     }
 }
 
 Selection:: ~Selection()
 {
-  delete[] ListeChemin;
-  delete[] TailleChemin;
+  delete[] Chemins;
+}
+
+int Selection:: GetNombreChemins()
+{
+  return NombreChemins;
 }

@@ -3,9 +3,9 @@
 #include "Selection.h"
 class Selection_par_tournoi: public Selection
 {
-  private:
-    int Indiceaffrontement;
-  public:
-    Selection_par_tournoi(int, int*, int**, int);
+ private:
+  int nbelus;
+ public:
+  Selection_par_tournoi(int, Chemin*, int);
 };
 #endif

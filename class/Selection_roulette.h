@@ -3,8 +3,12 @@
 #include "Selection.h"
 class Selection_roulette:public Selection
 {
-  private:
-    float Probabilite;
-  public:
+ private:
+  int nbelus;
+  float probabilite;
+ public:
+  Selection_roulette();
+  Selection_roulette(int, int*, int, float);
+  ~Selection_roulette();
 };
 #endif
