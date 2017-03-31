@@ -1,9 +1,15 @@
 #ifndef selection
 #define selection
 
-class Selection:
+class Selection
 {
-  private:
-  public:
+ private:
+  int Nombre;
+  int * TailleChemin;
+  int ** ListeChemin;
+ public:
+  Selection();
+  Selection(int, int *, int **);
+  ~Selection();
 };
 #endif
