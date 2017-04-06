@@ -1,15 +1,15 @@
 #ifndef selection
 #define selection
-
+#include "Chemin.h"
 class Selection
 {
  private:
-  int Nombre;
-  int * TailleChemin;
-  int ** ListeChemin;
+  int NombreChemins;
+  Chemin * Chemins;
  public:
   Selection();
-  Selection(int, int *, int **);
+  Selection(int, Chemin *);
   ~Selection();
+  int GetNombreChemins();
 };
 #endif
