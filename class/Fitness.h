@@ -1,13 +1,15 @@
 #ifndef fitness
 #define fitness
 
-#include"Chromosome.h"
+#include"Chemin.h"
 
 class Fitness{
     private:
         int DistanceCalculee;
     public:
-
+	Fitness();
+	Fitness(int);
+	int GetDistance();
     };
 
 #endif

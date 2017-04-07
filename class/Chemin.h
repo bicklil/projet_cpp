@@ -6,17 +6,24 @@
 #include"Ville.h"
 
 class Chemin{
+ public:
+  static Chemin& getInstance_c()
+  {
+    static Chemin instance;
+    return instance;
+  }
  private:
   int nbvilles;
   Ville* coordonnees_villes;
   int score;
- public:
   Chemin();
   Chemin(int, Ville*, int);
   ~Chemin();
   Chemin(const Chemin&);
   int GetScore();
   void SetScore(int);
+  int Getnbvilles();
+  Ville* GetCoords();
 };
 
 

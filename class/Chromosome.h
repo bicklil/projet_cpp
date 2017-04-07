@@ -5,10 +5,15 @@
 #include "Gene.h"
 
 class Chromosome{
+ public:
+  static Chromosome& GetInstance()
+  {
+    static Chromosome instance;
+    return instance;
+  }
  private:
   int taille;
   Gene* genes;
- public:
   Chromosome();
   Chromosome(int, Gene*);
   ~Chromosome();

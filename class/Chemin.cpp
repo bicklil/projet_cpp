@@ -46,3 +46,13 @@ void Chemin:: SetScore(int sco)
 {
   score = sco;
 }
+
+int Chemin:: Getnbvilles()
+{
+  return nbvilles;
+}
+
+Ville* Chemin::GetCoords()
+{
+  return coordonnees_villes;
+}
