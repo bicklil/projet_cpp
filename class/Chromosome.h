@@ -4,10 +4,14 @@
 #include"Croisement.h"
 
 class Chromosome{
-    private:
-        int taille
-    public:
-
+ private:
+  int taille;
+  int* coordonnees;
+ public:
+  Chromosome();
+  Chromosome(int, int*);
+  ~Chromosome();
+  int GetTaille();
 };
 
 #endif
