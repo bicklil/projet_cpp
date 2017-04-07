@@ -1,16 +1,23 @@
 #ifndef chromosome
 #define chromosome
 
-#include"Croisement.h"
+#include "Croisement.h"
+#include "Gene.h"
 
 class Chromosome{
+ public:
+  static Chromosome& GetInstance()
+  {
+    static Chromosome instance;
+    return instance;
+  }
  private:
   int taille;
-  int* coordonnees;
- public:
+  Gene* genes;
   Chromosome();
-  Chromosome(int, int*);
+  Chromosome(int, Gene*);
   ~Chromosome();
+  Chromosome(const Chromosome&);
   int GetTaille();
 };
 

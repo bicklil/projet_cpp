@@ -5,10 +5,13 @@
 
 class Population: public Chromosome
 {
-
-  private:
-  public:
-
+ private:
+  int taille;
+  int generation;
+ public:
+  Population();
+  Population(int, int);
+  void GenerationUp();
 };
 
 #endif

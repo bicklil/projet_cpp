@@ -2,13 +2,19 @@
 #define ville
 
 class Ville{
-  private:
-    int x, y;
-  public:
-    Ville(int, int);
-    int GetPos_X();
-    int GetPos_Y();
-
+ public:
+  static Ville& getInstance()
+  {
+    static Ville instance;
+    return instance;
+  }
+ private:
+  int numville, x, y;
+ public:
+  Ville();
+  Ville(int, int, int);
+  int GetPos_X();
+  int GetPos_Y();
 };
 
 #endif

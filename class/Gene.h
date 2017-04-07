@@ -5,6 +5,7 @@ class Gene{
   private:
     int numGene;
   public:
+    Gene();
     Gene(const Gene&);
     int GetGene();
 };

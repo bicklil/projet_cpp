@@ -3,18 +3,27 @@
 
 #include"Fitness.h"
 #include"Chromosome.h"
+#include"Ville.h"
 
 class Chemin{
- private:
-  int nbchemins;
-  int* coordonnees_chemins;
-  int score;
  public:
+  static Chemin& getInstance_c()
+  {
+    static Chemin instance;
+    return instance;
+  }
+ private:
+  int nbvilles;
+  Ville* coordonnees_villes;
+  int score;
   Chemin();
-  Chemin(int, int*, int);
+  Chemin(int, Ville*, int);
   ~Chemin();
+  Chemin(const Chemin&);
   int GetScore();
   void SetScore(int);
+  int Getnbvilles();
+  Ville* GetCoords();
 };
 
 
