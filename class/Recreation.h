@@ -6,11 +6,13 @@
 #include"Ville.h"
 
 class Recreation{
-    private:
-        Chromosome* ChromosomesRetenus;
-        Ville* VillesRetenues;
-    public:
-
-    };
+ private:
+  Chromosome* ChromosomesRetenus;
+  Ville* VillesRetenues;
+ public:
+  Recreation();
+  Recreation(int);
+  ~Recreation();
+};
 
 #endif
