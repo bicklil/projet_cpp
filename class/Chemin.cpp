@@ -27,6 +27,16 @@ Chemin:: ~Chemin()
   delete[] coordonnees_villes;
 }
 
+Chemin:: Chemin(const Chemin& C)
+{
+  nbvilles = C.nbvilles;
+  score = C.score;
+  for(int i=0;i<nbvilles;i++)
+    {
+      coordonnees_villes[i] = C.coordonnees_villes[i];
+    }
+}
+
 int Chemin:: GetScore()
 {
   return score;

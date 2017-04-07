@@ -24,3 +24,17 @@ Chromosome:: ~Chromosome()
 {
   delete[] genes;
 }
+
+Chromosome:: Chromosome(const Chromosome& C)
+{
+  taille = C.taille;
+  for(int i=0; i<taille; i++)
+    {
+      genes[i] = C.genes[i];
+    }
+}
+
+int Chromosome:: GetTaille()
+{
+  return taille;
+}

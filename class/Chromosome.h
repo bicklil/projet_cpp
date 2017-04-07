@@ -12,7 +12,7 @@ class Chromosome{
   Chromosome();
   Chromosome(int, Gene*);
   ~Chromosome();
-  //Chromosome(const &Chromosome);
+  Chromosome(const Chromosome&);
   int GetTaille();
 };
 
