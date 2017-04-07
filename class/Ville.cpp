@@ -1,5 +1,10 @@
 #include "Ville.h"
 
+Ville::Ville(){
+  x = 0;
+  y = 0;
+}
+
 Ville::Ville(int pos_x, int pos_y){
     x = pos_x;
     y = pos_y;

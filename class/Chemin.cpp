@@ -2,29 +2,29 @@
 
 Chemin:: Chemin()
 {
-  nbchemins = 0;
-  coordonnees_chemins = 0;
+  nbvilles = 0;
+  coordonnees_villes = 0;
   score = 0;
 }
 
-Chemin:: Chemin(int nbc, int* coords_c,int sco)
+Chemin:: Chemin(int nbv, Ville* coords_v,int sco)
 {
   score = sco;
-  if (nbc != nbchemins)
+  if (nbv != nbvilles)
     {
-      nbchemins = nbc;
-      delete[] coords_c;
-      coordonnees_chemins = new Chromosome[nbchemins];
+      nbvilles = nbv;
+      delete[] coordonnees_villes;
+      coordonnees_villes = new Ville[nbvilles];
     }
-  for (int i=0;i<nbc;i++)
+  for (int i=0;i<nbv;i++)
     {
-      coordonnees_chemins[i] = coords_c[i];
+      coordonnees_villes[i] = coords_v[i];
     }
 }
 
 Chemin:: ~Chemin()
 {
-  delete[] coordonnees_chemins;
+  delete[] coordonnees_villes;
 }
 
 int Chemin:: GetScore()
