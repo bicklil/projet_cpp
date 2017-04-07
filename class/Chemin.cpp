@@ -7,14 +7,14 @@ Chemin:: Chemin()
   score = 0;
 }
 
-Chemin:: Chemin(int nbv, Ville* coords_v,int sco)
+Chemin:: Chemin(int nbv, Chromosome* coords_v,int sco)
 {
   score = sco;
   if (nbv != nbvilles)
     {
       nbvilles = nbv;
       delete[] coordonnees_villes;
-      coordonnees_villes = new Ville[nbvilles];
+      coordonnees_villes = new Chromosome[nbvilles];
     }
   for (int i=0;i<nbv;i++)
     {
@@ -52,7 +52,7 @@ int Chemin:: Getnbvilles()
   return nbvilles;
 }
 
-Ville* Chemin::GetCoords()
+Chromosome* Chemin::GetCoords()
 {
   return coordonnees_villes;
 }

@@ -2,20 +2,19 @@
 #define chemin
 
 #include"Chromosome.h"
-#include"Ville.h"
 
 class Chemin{
  private:
   int nbvilles;
-  Ville* coordonnees_villes;
+  Chromosome* coordonnees_villes;
   int score;
  public:
   int GetScore();
   void SetScore(int);
   int Getnbvilles();
-  Ville* GetCoords();
+  Chromosome* GetCoords();
   Chemin();
-  Chemin(int, Ville*, int);
+  Chemin(int, Chromosome*, int);
   ~Chemin();
   Chemin(const Chemin&);
 };
