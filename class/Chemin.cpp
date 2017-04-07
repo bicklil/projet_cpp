@@ -7,7 +7,7 @@ Chemin:: Chemin()
   score = 0;
 }
 
-Chemin:: Chemin(int nbc, Chromosome* coords_c,int sco)
+Chemin:: Chemin(int nbc, int* coords_c,int sco)
 {
   score = sco;
   if (nbc != nbchemins)

@@ -11,7 +11,7 @@ class Chemin{
   int score;
  public:
   Chemin();
-  Chemin(int, Chromosome*, int);
+  Chemin(int, int*, int);
   ~Chemin();
   int GetScore();
   void SetScore(int);
