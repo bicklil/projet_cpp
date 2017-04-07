@@ -1,1 +1,2 @@
-Je me présent je m'appelle Henri.
+Voici la page Github de note projet de C++.
+
