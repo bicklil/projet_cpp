@@ -2,12 +2,6 @@
 #define ville
 
 class Ville{
- public:
-  static Ville& getInstance()
-  {
-    static Ville instance;
-    return instance;
-  }
  private:
   int numville, x, y;
  public:
