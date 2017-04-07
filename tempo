@@ -1,0 +1,16 @@
+bool test_exist(int i, int* chemin, int num)
+int* crea_chemin(int nb)
+{
+  int * chemin = new int[nb]
+  for (int i=0;i<nb;i++)
+  {
+    vrai = true;
+    while(vrai)
+    {
+      num = rand()% nb +1;
+      if (test_exist(i,chemin,num))
+        vrai = false;
+    }
+  }
+  return chemin
+}
