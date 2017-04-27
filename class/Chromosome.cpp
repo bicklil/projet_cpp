@@ -3,35 +3,16 @@
 Chromosome:: Chromosome()
 {
   taille = 0;
-  genes = 0;
 }
 
-Chromosome:: Chromosome(int t, Gene* g)
+Chromosome:: Chromosome(int t)
 {
-  if (taille != t)
-    {
-      taille = t;
-      delete[] genes;
-      genes = new Gene[taille];
-    }
-  for(int i=0; i<taille; i++)
-    {
-      genes[i] = g[i];
-    }
-}
-
-Chromosome:: ~Chromosome()
-{
-  delete[] genes;
+  taille = t;
 }
 
 Chromosome:: Chromosome(const Chromosome& C)
 {
   taille = C.taille;
-  for(int i=0; i<taille; i++)
-    {
-      genes[i] = C.genes[i];
-    }
 }
 
 int Chromosome:: GetTaille()

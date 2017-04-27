@@ -1,17 +1,16 @@
 #ifndef chromosome
 #define chromosome
 
-#include "Croisement.h"
+#include "Population.h"
 #include "Gene.h"
 
-class Chromosome{
+class Chromosome: public Population
+{
  private:
   int taille;
-  Gene* genes;
  public:
   Chromosome();
-  Chromosome(int, Gene*);
-  ~Chromosome();
+  Chromosome(int);
   Chromosome(const Chromosome&);
   int GetTaille();
 };

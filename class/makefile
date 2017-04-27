@@ -1,8 +1,19 @@
 CC= g++
-OBJ= Algo_genetique.o Chemin.o Chromosome.o Croisement.o Elitisme.o Fitness.o Gene.o Individu.o Mutation.o Options.o Population.o Recreation.o Selection.o Selection_par_rang.o Selection_par_tournoi.o Selection_roulette.o Selection_uniforme.o Ville.o
+OBJ= Algo_genetique.o cng.o Chemin.o Chromosome.o Croisement.o Elitisme.o Fitness.o Gene.o Individu.o Mutation.o Options.o Population.o Recreation.o Selection.o Selection_par_rang.o Selection_par_tournoi.o Selection_roulette.o Selection_uniforme.o Ville.o
 
-Algo_genetique.o: Algo_genetique.h Algo_genetique.cpp
+main.exe: $(OBJ)
+	$(CC) $(OBJ) -o main.exe -L. -L/usr/include/GL -L/usr/X11R6/lib -lcng -lglut -lGLU -lGL -lX11 -lm
+	./main.exe
+
+Algo_genetique.o: Algo_genetique.h Algo_genetique.cpp Population.h cng.h libcng.a
 	$(CC) -c Algo_genetique.cpp
+
+libcng.a: cng.o
+	ar cr libcng.a cng.o
+	ranlib libcng.a
+
+cng.o: cng.h cng.c
+	gcc -c cng.c
 
 Chemin.o: Chemin.h Chemin.cpp Fitness.h Chromosome.h
 	$(CC) -c Chemin.cpp
@@ -11,7 +22,7 @@ Chromosome.o: Chromosome.h Chromosome.cpp Croisement.h
 	$(CC) -c Chromosome.cpp
 
 Croisement.o: Croisement.h Croisement.cpp
-	$(cc) -c Croisement.cpp
+	$(CC) -c Croisement.cpp
 
 Elitisme.o: Elitisme.h Elitisme.cpp Fitness.h Selection.h
 	$(CC) -c Elitisme.cpp
@@ -55,17 +66,7 @@ Selection_uniforme.o: Selection_uniforme.h Selection_uniforme.cpp Selection.h
 Ville.o: Ville.h Ville.cpp
 	$(CC) -c Ville.cpp
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-	
+clean:
+	rm -f *.o
+	rm -f *~
+	rm main.exe

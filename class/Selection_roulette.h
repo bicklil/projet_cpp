@@ -8,7 +8,6 @@ class Selection_roulette:public Selection
   float probabilite;
  public:
   Selection_roulette();
-  Selection_roulette(int, int*, int, float);
-  ~Selection_roulette();
+  Selection_roulette(int, Chemin*, float, int);
 };
 #endif

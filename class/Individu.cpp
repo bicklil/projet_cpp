@@ -1,1 +1,1 @@
-#import "Individu.h"
+#include "Individu.h"
