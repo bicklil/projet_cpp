@@ -21,6 +21,11 @@ Chromosome:: Chromosome(const Chromosome& C)
   taille = C.taille;
 }
 
+Chromosome:: ~Chromosome()
+{
+  delete[] Genes;
+}
+
 int Chromosome:: GetTaille()
 {
   return taille;

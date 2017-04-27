@@ -13,6 +13,7 @@ class Chromosome: public Population
   Chromosome();
   Chromosome(int, int*, int*);
   Chromosome(const Chromosome&);
+  ~Chromosome();
   int GetTaille();
   Gene* GetGene();
 };

@@ -13,7 +13,7 @@ Chemin:: Chemin()
 // Remplit le tableau LeChemin avec le numero de toutes les villes constituant
 // le chemin dans un certain ordre avec NV1 le numero de la ville de depart et
 // NV2 le numero de la ville d'arrivée.
-Chemin:: Chemin(int nbv, int* T1, int* T2, int NV1, int NV2,int sco):Chromosome(nbv, T1, T2)
+Chemin:: Chemin(int nbv, int* T1, int* T2, int NV1, int NV2, int sco):Chromosome(nbv, T1, T2)
 {
   // Pour generer un chemin au hasard, il faut inverser les position du tableau.
   // D'où l'existence de ces variables.

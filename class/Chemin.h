@@ -7,7 +7,7 @@ class Chemin:public Chromosome{
  private:
   int nbvilles;
   int* LeChemin;
-  // numville1 et numville2 designent la ville au debut et à la fin du chemin.
+  // numville1 et numville2 désignent la ville au debut et à la fin du chemin.
   int numville1;
   int numville2;
   int score;

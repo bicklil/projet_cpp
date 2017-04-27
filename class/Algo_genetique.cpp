@@ -1,53 +1,65 @@
 #include<stdlib.h>
 #include<cstdlib>
+#include<time.h>
 #include"Algo_genetique.h"
 #include"cng.h"
 #define VILLES 100
 
 bool la_bool = true;
 
-int* Tableau_aleatoire(int min, int max, int taille)
+void Tableau_aleatoire(int min, int max, int taille, int *T)
 {
-  int* T;
-  T = new int[taille];
+  srand(time(NULL));
   for(int i=0;i<taille;i++)
     {
       // Initialise une valeur comprise entre min et max dans le tableau.
       T[i] = min + (rand() % (max - min));
     }
-  return T;
 }
 
 void dessin(void){
   if(la_bool){
+    srand(time(NULL));
     // La première et la dernière ville du chemin.
     int Nville1, Nville2;
-    // Contient le chemin.
-    int * Chem;
+    Gene* TabGenes;
+    Gene G1, G2;
+    // Tableaux contenant les coordonnées x et y des villes.
+    int *T1, *T2;
     Nville1 = 1 + rand()%VILLES;
     Nville2 = 1 + rand()%VILLES;
     while(Nville1 == Nville2)
-      Nville2 = 1 + rand()%VILLES;
-    // Tableau contenant les coordonnées x des villes.
-    int *T1 = Tableau_aleatoire(1, 800, VILLES);
-    // Tableau contenant les coordonnées y des villes.
-    int *T2 = Tableau_aleatoire(1, 600, VILLES);
+      {
+	Nville2 = 1 + rand()%VILLES;
+      }
+    T1 = new int[VILLES];
+    T2 = new int[VILLES];
+    Tableau_aleatoire(1, 800, VILLES, T1);
+    Tableau_aleatoire(1, 600, VILLES, T2);
     // Population de taille VILLES, première génération.
     // Génération d'un chemin partant de la ville portant le numéro Nville1
     // et finissant dans la ville numéro Nville2.
     Chemin Population(VILLES, T1, T2, Nville1, Nville2, 0);
-    Chem = Population.GetChemin();
+    // Recupere le tableau des gènes.
+    TabGenes = Population.Chromosome::GetGene();
     cng_current_color(255, 0, 0);
     // Dessine de jolis cercles.
-    for(int i=0; i<VILLES; i++) cng_circle(Population.Chromosome::GetGene()[i].GetX(), Population.Chromosome::GetGene()[i].GetY(), 3);
+    for(int i=0; i<VILLES; i++) cng_circle(TabGenes[i].GetX(), TabGenes[i].GetY(), 3);
+    /* Bug avec std bad alloc, lié à Population.GetChemin().
     // Trace des lignes constituant le chemin.
     for(int j=0; j<VILLES-1; j++)
-      cng_line(Population.Chromosome::GetGene()[Chem[j]].GetX(),
-	       Population.Chromosome::GetGene()[Chem[j]].GetY(),
-	       Population.Chromosome::GetGene()[Chem[j + 1]].GetX(),
-	       Population.Chromosome::GetGene()[Chem[j + 1]].GetY());
+      {
+	G1 = TabGenes[Population.GetChemin()[j]];
+	G2 = TabGenes[Population.GetChemin()[j + 1]];
+	cng_line(G1.GetX(),
+		 G1.GetY(),
+		 G2.GetX(),
+		 G2.GetY());
+		 }*/
     cng_swap_screen();
     la_bool= false;
+    delete[] T1;
+    delete[] T2;
   }
 }
 
