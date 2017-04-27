@@ -1,6 +1,5 @@
 #include<stdlib.h>
 #include<cstdlib>
-#include <iostream>
 #include<time.h>
 #include"Algo_genetique.h"
 #include"cng.h"
@@ -46,9 +45,8 @@ void dessin(void){
     cng_current_color(255, 0, 0);
     // Dessine de jolis cercles.
     for(int i=0; i<VILLES; i++) cng_circle(TabGenes[i].GetX(), TabGenes[i].GetY(), 3);
-    // Bug avec std bad alloc, lié à Population.GetChemin().
+    /* Bug avec std bad alloc, lié à Population.GetChemin().
     // Trace des lignes constituant le chemin.
-
     for(int j=0; j<VILLES-1; j++)
       {
 	G1 = TabGenes[Population.GetChemin()[j]];
@@ -57,8 +55,7 @@ void dessin(void){
 		 G1.GetY(),
 		 G2.GetX(),
 		 G2.GetY());
-		 }
-        std::cout << "/* message */" << '\n';
+		 }*/
     cng_swap_screen();
     la_bool= false;
     delete[] T1;

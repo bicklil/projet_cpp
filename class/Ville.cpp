@@ -1,4 +1,5 @@
 #include "Ville.h"
+#include <iostream>
 
 Ville::Ville(){
   numville = 0;
@@ -7,6 +8,7 @@ Ville::Ville(){
 }
 
 Ville::Ville(int nv, int pos_x, int pos_y){
+  std::cout << nv << " " << pos_x << " " << pos_y << "\n" ;
   numville = nv;
   x = pos_x;
   y = pos_y;

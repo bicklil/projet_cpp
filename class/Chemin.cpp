@@ -19,25 +19,28 @@ Chemin:: Chemin(int nbv, int* T1, int* T2, int NV1, int NV2, int sco):Chromosome
   // D'où l'existence de ces variables.
   int hasard1, hasard2, passage = 0;
   score = sco;
-  LeChemin = new int[nbvilles];
+  LeChemin = new int[nbv];
   // Génère une série de numéro désignant les villes, le premier élément de la
   // liste est la première ville, le dernier élément la dernière ville.
   LeChemin[0] = NV1;
   for (int i=1;i<nbv;i++)
     {
       if (i == NV1)
-	{
-	  i++;
-	  passage--;
-	}
+    	{
+    	  //i++;
+    	  passage--;
+    	}
       else if (i == NV2)
-	{
-	  i++;
-	  passage--;
-	}
+    	{
+    	  //i++;
+    	  passage--;
+    	}
       else
-	LeChemin[i+passage] = i;
+      {
+    	LeChemin[i+passage] = i;
+      }
     }
+
   LeChemin[nbv - 1] = NV2;
   // Génération du chemin aléatoire partant d'une ville à une autre en
   // inversant les positions d'un tableau exception faite des deux extremites
