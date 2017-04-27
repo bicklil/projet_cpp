@@ -10,6 +10,7 @@ class Gene
   public:
     Gene();
     Gene(const Gene&);
+    void SetnumGene(int);
     int GetGene();
     void SetCoords(int, int);
 };

@@ -1,7 +1,6 @@
 #ifndef population
 #define population
 
-
 class Population
 {
  private:

@@ -8,6 +8,7 @@ class Chromosome: public Population
 {
  private:
   int taille;
+  Gene* Genes;
  public:
   Chromosome();
   Chromosome(int);

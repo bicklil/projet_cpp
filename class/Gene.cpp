@@ -10,6 +10,10 @@ Gene::Gene(const Gene& g){
     VilleEq = g.VilleEq;
     }
 
+void Gene:: SetnumGene(int nouveau){
+  numGene = nouveau;
+}
+
 int Gene::GetGene(){
     return numGene;
     }
