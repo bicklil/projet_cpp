@@ -4,5 +4,5 @@
 #include "cng.h"
 
 void dessin(void);
-
+int* Tableau_aleatoire(int, int, int);
 #endif

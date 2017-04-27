@@ -6,13 +6,13 @@ Chromosome:: Chromosome()
   Genes = 0;
 }
 
-Chromosome:: Chromosome(int t):Population(t, 1)
+Chromosome:: Chromosome(int t, int* T1, int* T2):Population(t, 1)
 {
   taille = t;
   Genes = new Gene[taille];
   for (int i=0; i< taille; i++)
     {
-      Genes[i].SetnumGene(i);
+      Genes[i].SetVille(i, T1[i], T2[i]);
     }
 }
 
@@ -24,4 +24,9 @@ Chromosome:: Chromosome(const Chromosome& C)
 int Chromosome:: GetTaille()
 {
   return taille;
+}
+
+Gene* Chromosome:: GetGene()
+{
+  return Genes;
 }

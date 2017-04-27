@@ -11,9 +11,10 @@ class Chromosome: public Population
   Gene* Genes;
  public:
   Chromosome();
-  Chromosome(int);
+  Chromosome(int, int*, int*);
   Chromosome(const Chromosome&);
   int GetTaille();
+  Gene* GetGene();
 };
 
 #endif

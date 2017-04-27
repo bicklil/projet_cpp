@@ -6,7 +6,7 @@ Ville::Ville(){
   y = 0;
 }
 
-Ville::Ville(int pos_x, int pos_y, int nv){
+Ville::Ville(int nv, int pos_x, int pos_y){
   numville = nv;
   x = pos_x;
   y = pos_y;

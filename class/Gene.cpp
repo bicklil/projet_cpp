@@ -10,14 +10,21 @@ Gene::Gene(const Gene& g){
     VilleEq = g.VilleEq;
     }
 
-void Gene:: SetnumGene(int nouveau){
-  numGene = nouveau;
+void Gene:: SetVille(int nouveaunum, int nouveaux, int nouveauy){
+  numGene = nouveaunum;
+  VilleEq = Ville(nouveaunum, nouveaux, nouveauy);
 }
 
 int Gene::GetGene(){
     return numGene;
     }
 
-void Gene::SetCoords(int x, int y){
-  VilleEq = Ville(numGene, x, y);
+int Gene::GetX()
+{
+  return VilleEq.GetPos_X();
+}
+
+int Gene:: GetY()
+{
+  return VilleEq.GetPos_Y();
 }
