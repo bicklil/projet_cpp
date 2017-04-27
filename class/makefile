@@ -5,7 +5,7 @@ main.exe: $(OBJ)
 	$(CC) $(OBJ) -o main.exe -L. -L/usr/include/GL -L/usr/X11R6/lib -lcng -lglut -lGLU -lGL -lX11 -lm
 	./main.exe
 
-Algo_genetique.o: Algo_genetique.h Algo_genetique.cpp Population.h cng.h libcng.a
+Algo_genetique.o: Algo_genetique.h Algo_genetique.cpp Chemin.h cng.h libcng.a
 	$(CC) -c Algo_genetique.cpp
 
 libcng.a: cng.o
