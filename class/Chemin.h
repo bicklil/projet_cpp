@@ -3,18 +3,21 @@
 
 #include"Chromosome.h"
 
-class Chemin{
+class Chemin:public Chromosome{
  private:
   int nbvilles;
-  Chromosome* coordonnees_villes;
+  int* LeChemin;
+  // numville1 et numville2 designent la ville au debut et à la fin du chemin.
+  int numville1;
+  int numville2;
   int score;
  public:
   int GetScore();
   void SetScore(int);
+  int* GetChemin();
   int Getnbvilles();
-  Chromosome* GetCoords();
   Chemin();
-  Chemin(int, Chromosome*, int);
+  Chemin(int, int*, int*, int, int, int);
   ~Chemin();
   Chemin(const Chemin&);
 };
