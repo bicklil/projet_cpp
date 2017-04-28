@@ -74,13 +74,14 @@ void dessin(void){
     TabGenes = Population.Chromosome::GetGene();
     cng_current_color(255, 0, 0);
     // Dessine de jolis cercles.
-    for(int i=0; i<VILLES; i++) cng_circle(TabGenes[i].GetX(), TabGenes[i].GetY(), 3);
+    for(int i=0; i<VILLES; i++) cng_circle(TabGenes[i].GetX(), TabGenes[i].GetY(), 6);
     // Bug avec std bad alloc, lié à Population.GetChemin().
     // Trace des lignes constituant le chemin.
     for(int j=0; j<VILLES-1; j++)
       {
 	G1 = TabGenes[Population.GetChemin()[j]];
 	G2 = TabGenes[Population.GetChemin()[j + 1]];
+    cng_current_color(255,255,255);
 	cng_line(G1.GetX(),
 		 G1.GetY(),
 		 G2.GetX(),
