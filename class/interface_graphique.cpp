@@ -54,6 +54,7 @@ void dessin(void){
     int Nville1, Nville2;
     int nbrInd = 100;
     int* BestChemin;
+    int color[9] = {0,255,0,0,0,100,255,0,0};
     Fitness fit(3,VILLES);
     Gene* TabGenes;
     Gene G1, G2;
@@ -75,8 +76,9 @@ void dessin(void){
     Population Pop(nbrInd, VILLES, T1, T2, Nville1, Nville2, 0);
 
     Pop.actu_distance();
-    std::cout << "/* message */" << '\n';
+
     BestChemin = fit.MeilleursChemins(Pop);
+        std::cout << "/* message */" << '\n';
     for(int k;k<3;k++ )
     {
       // Recupere le tableau des gènes.
@@ -88,7 +90,7 @@ void dessin(void){
         {
         	G1 = TabGenes[Pop[BestChemin[k]].GetChemin()[j]];
         	G2 = TabGenes[Pop[BestChemin[k]].GetChemin()[j + 1]];
-          cng_current_color(255,255,255);
+          cng_current_color(color[k],color[k+1],color[k+2]);
         	cng_line(G1.GetX(),G1.GetY(),G2.GetX(),G2.GetY());
         }
       cout << Pop[BestChemin[k]].GetDistance() << endl;

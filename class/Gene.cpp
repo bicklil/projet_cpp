@@ -18,8 +18,6 @@ void Gene:: SetVille(int nouveaunum, int nouveaux, int nouveauy){
 
 Gene& Gene::operator=(const Gene& G)
 {
-  std::cout << "/* message egale*/" << '\n';
-  std::cout << &G << '\n';
   numGene = G.numGene;
   VilleEq = G.VilleEq;
   return *this;

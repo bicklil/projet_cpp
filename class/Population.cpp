@@ -23,7 +23,6 @@ Population:: Population(int t, int nbv, int* T1, int* T2, int NV1, int NV2, doub
   {
     listeChemin[i] = Chemin(nbv, T1, T2, NV1, NV2, 0);
   }
-  std::cout << (*this)[0].GetGene()[((*this)[0].GetChemin())[0]].GetX() << '\n';
 
 }
 
@@ -47,7 +46,6 @@ void Population::actu_distance()
   {
     distance_chemin = 0;
     TabGenes = (*this)[i].GetGene();
-    std::cout << "/* message */" << '\n';
     for(int j=0; j<(*this)[i].Getnbvilles()-1; j++)
       {
       //  std::cout << TabGenes[(*this)[i].GetChemin()[j]].GetY() << '\n';
@@ -57,6 +55,5 @@ void Population::actu_distance()
 	      distance_chemin += calcul_distance(G1.GetX(), G1.GetY(), G2.GetX(), G2.GetY());
       }
     this->operator[](i).SetDistance(distance_chemin);
-        std::cout << (*this)[i].GetDistance() << '\n';
 }
 }

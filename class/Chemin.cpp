@@ -62,7 +62,7 @@ Chemin:: ~Chemin()
   delete[] LeChemin;
 }
 
-Chemin:: Chemin(const Chemin& C)
+Chemin:: Chemin(const Chemin& C):Chromosome(C)
 {
   nbvilles = C.nbvilles;
   distance = C.distance;
@@ -99,6 +99,7 @@ Chemin& Chemin::operator=(const Chemin& C)
 {
   if (this != &C)
   {
+    this->Chromosome::operator=(C);
     nbvilles = C.nbvilles;
     distance = C.distance;
     numville1 = C.numville1;
