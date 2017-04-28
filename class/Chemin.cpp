@@ -1,5 +1,6 @@
 #include"Chemin.h"
 #include <cstdlib>
+#include <iostream>
 
 Chemin:: Chemin()
 {
@@ -40,7 +41,7 @@ Chemin:: Chemin(int nbv, int* T1, int* T2, int NV1, int NV2, int sco):Chromosome
     	LeChemin[i+passage] = i;
       }
     }
-
+  LeChemin[nbv - 2] = 0;
   LeChemin[nbv - 1] = NV2;
   // Génération du chemin aléatoire partant d'une ville à une autre en
   // inversant les positions d'un tableau exception faite des deux extremites

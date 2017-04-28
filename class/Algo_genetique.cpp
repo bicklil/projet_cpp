@@ -58,7 +58,6 @@ void dessin(void){
 		 G2.GetX(),
 		 G2.GetY());
 		 }
-        std::cout << "/* message */" << '\n';
     cng_swap_screen();
     la_bool= false;
     delete[] T1;
