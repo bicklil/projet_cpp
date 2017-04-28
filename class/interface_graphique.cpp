@@ -22,10 +22,7 @@ bool test_dist_mini(int* mapx, int* mapy, int nbrEffectue, int x, int y)
   return true;
 }
 
-double calcul_distance(int x1,int y1,int x2,int y2)
-{
-  return sqrt(pow(x1-x2,2) +(pow(y1-y2,2)));
-}
+
 
 void Tableau_aleatoire(int minx, int maxx, int miny, int maxy, int taille, int* Tx, int* Ty)
 {
@@ -55,6 +52,7 @@ void dessin(void){
     srand(time(NULL));
     // La première et la dernière ville du chemin.
     int Nville1, Nville2;
+    int nbrInd = 100;
     Gene* TabGenes;
     Gene G1, G2;
     double distance_chemin = 0;
@@ -64,7 +62,7 @@ void dessin(void){
     Nville2 = 1 + rand()%VILLES;
     while(Nville1 == Nville2)
       {
-	Nville2 = 1 + rand()%VILLES;
+	         Nville2 = 1 + rand()%VILLES;
       }
     T1 = new int[VILLES];
     T2 = new int[VILLES];
@@ -72,9 +70,11 @@ void dessin(void){
     // Population de taille VILLES, première génération.
     // Génération d'un chemin partant de la ville portant le numéro Nville1
     // et finissant dans la ville numéro Nville2.
-    Chemin Population(VILLES, T1, T2, Nville1, Nville2, 0);
+    Population Pop(nbrInd, VILLES, T1, T2, Nville1, Nville2, 0);
+    for(int k;k<nbrInd;k++ )
+    {
     // Recupere le tableau des gènes.
-    TabGenes = Population.Chromosome::GetGene();
+    TabGenes = Pop[nbrInd].Chromosome::GetGene();
     cng_current_color(255, 0, 0);
     // Dessine de jolis cercles.
     for(int i=0; i<VILLES; i++) cng_circle(TabGenes[i].GetX(), TabGenes[i].GetY(), 6);
