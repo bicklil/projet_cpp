@@ -11,6 +11,7 @@ class Gene
     Gene();
     Gene(const Gene&);
     void SetVille(int nouveaunum, int nouveaux, int nouveauy);
+    Gene& operator=(const Gene& );
     int GetGene();
     int GetX();
     int GetY();

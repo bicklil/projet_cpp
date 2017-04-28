@@ -16,6 +16,15 @@ void Gene:: SetVille(int nouveaunum, int nouveaux, int nouveauy){
   VilleEq = Ville(nouveaunum, nouveaux, nouveauy);
 }
 
+Gene& Gene::operator=(const Gene& G)
+{
+  std::cout << "/* message egale*/" << '\n';
+  std::cout << &G << '\n';
+  numGene = G.numGene;
+  VilleEq = G.VilleEq;
+  return *this;
+}
+
 int Gene::GetGene(){
     return numGene;
     }
@@ -25,7 +34,7 @@ int Gene::GetX()
   return VilleEq.GetPos_X();
 }
 
-int Gene:: GetY()
+int Gene::GetY()
 {
   return VilleEq.GetPos_Y();
 }

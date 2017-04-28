@@ -23,6 +23,8 @@ Population:: Population(int t, int nbv, int* T1, int* T2, int NV1, int NV2, doub
   {
     listeChemin[i] = Chemin(nbv, T1, T2, NV1, NV2, 0);
   }
+  std::cout << (*this)[0].GetGene()[((*this)[0].GetChemin())[0]].GetX() << '\n';
+
 }
 
 void Population:: GenerationUp()
@@ -44,13 +46,13 @@ void Population::actu_distance()
   for(int i=0;i<taille;i++)
   {
     distance_chemin = 0;
-    TabGenes = (*this)[i].Chromosome::GetGene();
+    TabGenes = (*this)[i].GetGene();
     std::cout << "/* message */" << '\n';
     for(int j=0; j<(*this)[i].Getnbvilles()-1; j++)
       {
-        std::cout << TabGenes[(*this)[i].GetChemin()[j]].GetY() << '\n';
-        G1 = TabGenes[(*this)[i].GetChemin()[j]];
-        G2 = TabGenes[(*this)[i].GetChemin()[j + 1]];
+      //  std::cout << TabGenes[(*this)[i].GetChemin()[j]].GetY() << '\n';
+        G1 = TabGenes[((*this)[i].GetChemin())[j]];
+        G2 = TabGenes[((*this)[i].GetChemin())[j + 1]];
 
 	      distance_chemin += calcul_distance(G1.GetX(), G1.GetY(), G2.GetX(), G2.GetY());
       }
