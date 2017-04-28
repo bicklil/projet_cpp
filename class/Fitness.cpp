@@ -15,22 +15,22 @@ int* Fitness:: MeilleursChemins(int Crit, int Tail, Population Tab_Pop)
   int* Les_Meilleurs;
   if(Crit > Tail)
     {
-      return -1;
+      return 0;
     }
   Les_Meilleurs = new int[Crit];
   for (i=0;i<Crit;i++)
     {
-      Les_Meilleurs[i] = 99999999;      
+      Les_Meilleurs[i] = i;
     }
   Critere = Crit;
-  Taille = Tail;
+  TailleChemin = Tail;
   for(i=Crit; i<Tail; i++)
     {
-      if(Tab_Pop[i].GetDistance() < Les_Meilleurs[0])
+      if(Tab_Pop[i].GetDistance() < Tab_Pop[Les_Meilleurs[0]])
 	{
 	  for(j=1; j<Crit; j++)
 	    {
-	      if(Tab_Pop[i].GetDistance() > Les_Meilleurs[j].GetDistance())
+	      if(Tab_Pop[i].GetDistance() > Tab_Pop[Les_Meilleurs[j]].GetDistance())
 		{
 		  Tab_Pop[j - 1] = i;
 		  j = Crit + 1;
