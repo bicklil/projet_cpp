@@ -15,7 +15,6 @@ Fitness:: Fitness(int C, int T)
 
 void Fitness::DecalageaGauche(int* T, int taille)
 {
-  int passage;
   for(int i=0;i<taille-1;i++)
     {
       T[i]=T[i+1];
