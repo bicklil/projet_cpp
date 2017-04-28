@@ -14,7 +14,7 @@ Selection_roulette:: Selection_roulette(int nombrec, Chemin* Listec, float proba
   float chance;
   for (int i=0; i<nombrec; i++)
     {
-      sco = Listec[i].GetScore();
+      sco = Listec[i].GetDistance();
       if (sco > max)
 	{
 	  max = sco;
@@ -24,7 +24,7 @@ Selection_roulette:: Selection_roulette(int nombrec, Chemin* Listec, float proba
     {
       for(int i=0; i<nombrec; i++)
 	{
-	  chance = rand() * ( Listec[i].GetScore() / (max + 1));
+	  chance = rand() * ( Listec[i].GetDistance() / (max + 1));
 	  if (chance > proba)
 	    {
 	      Listec;

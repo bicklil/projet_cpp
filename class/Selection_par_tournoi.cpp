@@ -12,13 +12,13 @@ Selection_par_tournoi :: Selection_par_tournoi(int nombrec, Chemin * Chemins, in
     {
       for (int i=0; i<nombrec;i += 2 * a)
 	{
-	  challenger1 = Chemins[i].GetScore();
-	  challenger2 = Chemins[i + a].GetScore();
+	  challenger1 = Chemins[i].GetDistance();
+	  challenger2 = Chemins[i + a].GetDistance();
 	  if (challenger1 > challenger2)
 	    {
-	      Chemins[i].SetScore(challenger2);
+	      Chemins[i].SetDistance(challenger2);
 	    }
-	  Chemins[i + a].SetScore(0);
+	  Chemins[i + a].SetDistance(0);
 	  j++;
 	  if (j >= nombrec - nbelus)
 	    {

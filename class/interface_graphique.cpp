@@ -4,6 +4,8 @@
 #include<math.h>
 #include"interface_graphique.h"
 #include"cng.h"
+#include<iostream>
+using namespace std;
 
 bool la_bool = true;
 
@@ -55,6 +57,7 @@ void dessin(void){
     int Nville1, Nville2;
     Gene* TabGenes;
     Gene G1, G2;
+    double distance_chemin = 0;
     // Tableaux contenant les coordonnées x et y des villes.
     int *T1, *T2;
     Nville1 = 1 + rand()%VILLES;
@@ -86,7 +89,10 @@ void dessin(void){
 		 G1.GetY(),
 		 G2.GetX(),
 		 G2.GetY());
-		 }
+	distance_chemin += calcul_distance(G1.GetX(), G1.GetY(), G2.GetX(), G2.GetY());
+      }
+    Population.SetDistance(distance_chemin);
+    cout << Population.GetDistance() << endl;
     cng_swap_screen();
     la_bool= false;
     delete[] T1;

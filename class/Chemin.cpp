@@ -5,7 +5,7 @@
 Chemin:: Chemin()
 {
   nbvilles = 0;
-  score = 0;
+  distance = 0;
   LeChemin = 0;
   numville1 = 0;
   numville2 = 0;
@@ -14,12 +14,12 @@ Chemin:: Chemin()
 // Remplit le tableau LeChemin avec le numero de toutes les villes constituant
 // le chemin dans un certain ordre avec NV1 le numero de la ville de depart et
 // NV2 le numero de la ville d'arrivée.
-Chemin:: Chemin(int nbv, int* T1, int* T2, int NV1, int NV2, int sco):Chromosome(nbv, T1, T2)
+Chemin:: Chemin(int nbv, int* T1, int* T2, int NV1, int NV2, double dist):Chromosome(nbv, T1, T2)
 {
   // Pour generer un chemin au hasard, il faut inverser les position du tableau.
   // D'où l'existence de ces variables.
   int hasard1, hasard2, passage = 0;
-  score = sco;
+  distance = distance;
   LeChemin = new int[nbv];
   // Génère une série de numéro désignant les villes, le premier élément de la
   // liste est la première ville, le dernier élément la dernière ville.
@@ -64,7 +64,7 @@ Chemin:: ~Chemin()
 Chemin:: Chemin(const Chemin& C)
 {
   nbvilles = C.nbvilles;
-  score = C.score;
+  distance = C.distance;
   numville1 = C.numville1;
   numville2 = C.numville2;
   for(int i=0;i<nbvilles;i++)
@@ -73,14 +73,14 @@ Chemin:: Chemin(const Chemin& C)
     }
 }
 
-int Chemin:: GetScore()
+double Chemin:: GetDistance()
 {
-  return score;
+  return distance;
 }
 
-void Chemin:: SetScore(int sco)
+void Chemin:: SetDistance(double dist)
 {
-  score = sco;
+  distance = dist;
 }
 
 int Chemin:: Getnbvilles()
