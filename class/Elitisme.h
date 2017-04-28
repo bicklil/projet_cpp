@@ -4,11 +4,14 @@
 #include"Fitness.h"
 #include"Selection.h"
 
-class Elitisime{
-    private:
-        int** ChromosomeElites;
-    public:
-
+class Elitisme{
+ private:
+  int* ChromosomeElites;
+  int nbElites;
+ public:
+  Elitisme();
+  Elitisme(int, int*);
+  ~Elitisme();
 };
 
 #endif

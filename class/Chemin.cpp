@@ -1,6 +1,7 @@
 #include"Chemin.h"
 #include <cstdlib>
 #include <iostream>
+#include <time.h>
 
 Chemin:: Chemin()
 {
@@ -16,6 +17,7 @@ Chemin:: Chemin()
 // NV2 le numero de la ville d'arrivée.
 Chemin:: Chemin(int nbv, int* T1, int* T2, int NV1, int NV2, double dist):Chromosome(nbv, T1, T2)
 {
+  srand(time(NULL));
   // Pour generer un chemin au hasard, il faut inverser les position du tableau.
   // D'où l'existence de ces variables.
   int hasard1, hasard2, passage = 0;
@@ -28,12 +30,10 @@ Chemin:: Chemin(int nbv, int* T1, int* T2, int NV1, int NV2, double dist):Chromo
     {
       if (i == NV1)
     	{
-    	  //i++;
     	  passage--;
     	}
       else if (i == NV2)
     	{
-    	  //i++;
     	  passage--;
     	}
       else

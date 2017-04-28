@@ -6,7 +6,7 @@ Chromosome:: Chromosome()
   Genes = 0;
 }
 
-Chromosome:: Chromosome(int t, int* T1, int* T2):Population(t, 1)
+Chromosome:: Chromosome(int t, int* T1, int* T2)
 {
   taille = t;
   Genes = new Gene[taille];
