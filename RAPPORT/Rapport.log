@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2012.3.28)  28 APR 2017 16:16
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2012.3.28)  28 APR 2017 16:41
 entering extended mode
  %&-line parsing enabled.
 **Rapport.tex
@@ -357,29 +357,43 @@ File: pppdftex.def 2009/02/07 v0.4g Pdfpages driver for pdfTeX (AM)
 \AM@toc@title=\toks20
 \c@AM@survey=\count98
 \AM@templatesizebox=\box27
+)
+(/usr/share/texmf-texlive/tex/latex/caption/caption.sty
+Package: caption 2009/10/09 v3.1k Customizing captions (AR)
+
+(/usr/share/texmf-texlive/tex/latex/caption/caption3.sty
+Package: caption3 2009/10/09 v3.1k caption3 kernel (AR)
+\captionmargin=\dimen114
+\captionmargin@=\dimen115
+\captionwidth=\dimen116
+\caption@indent=\dimen117
+\caption@parindent=\dimen118
+\caption@hangindent=\dimen119
+)
+\c@ContinuedFloat=\count99
 ) (./Rapport.aux)
 \openout1 = `Rapport.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 17.
-LaTeX Font Info:    ... okay on input line 17.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 17.
-LaTeX Font Info:    ... okay on input line 17.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 17.
-LaTeX Font Info:    ... okay on input line 17.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 17.
-LaTeX Font Info:    ... okay on input line 17.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 17.
-LaTeX Font Info:    ... okay on input line 17.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 17.
-LaTeX Font Info:    ... okay on input line 17.
-LaTeX Info: Redefining \degres on input line 17.
-LaTeX Info: Redefining \dots on input line 17.
-LaTeX Info: Redefining \up on input line 17.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Info: Redefining \degres on input line 18.
+LaTeX Info: Redefining \dots on input line 18.
+LaTeX Info: Redefining \up on input line 18.
 
 
 Package frenchb.ldf Warning: OT1 encoding should not be used for French. 
 (frenchb.ldf)                Add \usepackage[T1]{fontenc} to the preamble
-(frenchb.ldf)                of your document, on input line 17.
+(frenchb.ldf)                of your document, on input line 18.
 
 *geometry auto-detecting driver*
 *geometry detected driver: pdftex*
@@ -424,15 +438,15 @@ driver: pdftex
 -----------------------
 (/usr/share/texmf-texlive/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count99
-\scratchdimen=\dimen114
+\scratchcounter=\count100
+\scratchdimen=\dimen120
 \scratchbox=\box28
-\nofMPsegments=\count100
-\nofMParguments=\count101
+\nofMPsegments=\count101
+\nofMParguments=\count102
 \everyMPshowfont=\toks21
-\MPscratchCnt=\count102
-\MPscratchDim=\dimen115
-\MPnumerator=\count103
+\MPscratchCnt=\count103
+\MPscratchDim=\dimen121
+\MPnumerator=\count104
 \everyMPtoPDFconversion=\toks22
 ) ABD: EveryShipout initializing macros
 (/usr/share/texmf-texlive/tex/latex/graphics/color.sty
@@ -443,12 +457,14 @@ File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
 )
 Package color Info: Driver file: pdftex.def on input line 130.
 )
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: End \AtBeginDocument code.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <12> on input line 18.
+(Font)              <12> on input line 19.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 18.
+(Font)              <8> on input line 19.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 18.
+(Font)              <6> on input line 19.
  [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] (./Rapport.toc
@@ -469,7 +485,7 @@ Chapitre 1.
 ]
 Chapitre 2.
 
-Overfull \hbox (12.93945pt too wide) in paragraph at lines 39--40
+Overfull \hbox (12.93945pt too wide) in paragraph at lines 40--41
 []\OT1/cmr/m/n/10 L'aspect graphique de l'ap-pli-ca-tion est r^^Sealis^^Se gr^a
 ce ^^Ra la bib-lioth^^Reque CNG fournie par M.NGUYEN. 
  []
@@ -481,7 +497,7 @@ n <1.5>, but at most version <1.4> allowed
 <../UseCase.pdf, id=16, 597.50786pt x 845.04686pt>
 File: ../UseCase.pdf Graphic file (type pdf)
  <use ../UseCase.pdf>
-Overfull \hbox (92.0274pt too wide) in paragraph at lines 41--42
+Overfull \hbox (92.0274pt too wide) in paragraph at lines 42--43
 [][] 
  []
 
@@ -495,32 +511,40 @@ rsion <1.5>, but at most version <1.4> allowed
 File: ../Classes_UML.pdf Graphic file (type pdf)
 
 <use ../Classes_UML.pdf>
-Overfull \hbox (92.0274pt too wide) in paragraph at lines 44--45
+Overfull \hbox (92.0274pt too wide) in paragraph at lines 45--46
 [][] 
  []
 
 [4 <../UseCase.pdf>] [5 <../Classes_UML.pdf>]
 Chapitre 3.
+<./1erGeneration.png, id=60, 1445.4pt x 903.375pt>
+File: ./1erGeneration.png Graphic file (type png)
+ <use ./1erGeneration.png>
+Overfull \hbox (3.61873pt too wide) in paragraph at lines 54--55
+ [] 
+ []
+
 [6
 
-] (./Rapport.aux) ) 
+] [7 <./1erGeneration.png>] (./Rapport.aux) ) 
 Here is how much of TeX's memory you used:
- 2987 strings out of 495061
- 40537 string characters out of 1182621
- 103971 words of memory out of 3000000
- 6131 multiletter control sequences out of 15000+50000
- 9460 words of font info for 33 fonts, out of 3000000 for 9000
+ 3921 strings out of 495061
+ 57292 string characters out of 1182621
+ 131137 words of memory out of 3000000
+ 7056 multiletter control sequences out of 15000+50000
+ 9761 words of font info for 34 fonts, out of 3000000 for 9000
  28 hyphenation exceptions out of 8191
- 28i,7n,24p,441b,210s stack positions out of 5000i,500n,10000p,200000b,50000s
-</usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmb
-x10.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmbx12.pfb></u
-sr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/tex
-mf-texlive/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texmf-texlive/f
-onts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texmf-texlive/fonts/type1/p
-ublic/amsfonts/cm/cmsl10.pfb>
-Output written on Rapport.pdf (7 pages, 123723 bytes).
+ 36i,7n,38p,441b,316s stack positions out of 5000i,500n,10000p,200000b,50000s
+</usr/share/texmf-texlive/fonts/ty
+pe1/public/amsfonts/cm/cmbx10.pfb></usr/share/texmf-texlive/fonts/type1/public/
+amsfonts/cm/cmbx12.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm
+/cmcsc10.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr10.pfb
+></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share
+/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texmf-texli
+ve/fonts/type1/public/amsfonts/cm/cmsl10.pfb>
+Output written on Rapport.pdf (8 pages, 188086 bytes).
 PDF statistics:
- 84 PDF objects out of 1000 (max. 8388607)
+ 94 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 11 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 16 words of extra memory for PDF output out of 10000 (max. 10000000)
 

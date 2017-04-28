@@ -7,6 +7,7 @@
 \usepackage{verbatim}
 \usepackage{graphicx}
 \usepackage{pdfpages}
+\usepackage{caption} 
 
 \title{Rapport du Projet de C++}
 \author{LEMAN Jean-Christophe, CARON Alexandre, COLLOT Kévin}
@@ -46,11 +47,16 @@ L'aspect graphique de l'application est réalisé grâce à la bibliothèque CNG
 Utiliser le makefile avec la commande make, puis lancer main.exe.
 \chapter{Bilan}
 \section{Difficultés rencontrées}
-
+La notion d'algorithme génétique étant nouvelle, la première difficulté a été de saisir tous les aspects de ce type d'algorithme. Par la suite, le fait d'avoir à travailler sur de nombreuses classes a été une contrainte difficile à mettre en place, notamment pour dissocier convenablement les classes "génériques" des algorithmes génétiques des classes propres au problème du voyageur de commerce.
 \section{Résultats obtenus}
-
+\subsection{Capture d'écran d'une première génération}
+	\begin{center}
+		\includegraphics[scale=0.3]{./1erGeneration.png}
+		\captionof{figure}{1ere génération.}
+		\label{fig1}
+	\end{center}
 \section{Perspectives d'évolution}
-
+On peut faire mieux.. On peut toujours faire mieux.
 
 
 \end{document}
