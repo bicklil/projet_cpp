@@ -3,24 +3,42 @@
 
 Fitness:: Fitness()
 {
-  DistanceCalculee = 0;
+  Critere = 0;
+  TailleChemin = 0;
 }
 
-Fitness:: Fitness(int DC)
+Fitness:: Fitness(int C, int T)
 {
-  DistanceCalculee = DC;
+  Critere = C;
+  TailleChemin = T;
 }
 
-int Fitness:: GetDistance(Chemin& C)
+int* Fitness:: MeilleursChemins(Population Tab_Pop)
 {
-  int distance = 0;
-  int nbv = C.Getnbvilles();
-  /*
-  Chromosome* cv  = C.GetCoords();
-  for (int i=0; i<nbv-1;i++)
+
+  int i, j;
+  int* Les_Meilleurs;
+  Les_Meilleurs = new int[Critere];
+  for (i=0;i<Critere;i++)
     {
-      distance += sqrt(pow(fabs(cv[i].(GetPos_X()) - cv[i+1].GetPos_X()), 2.0) + pow(fabs(cv[i].GetPos_Y() - cv[i+1].GetPos_Y()), 2.0));
-      }
-      delete[] cv;*/
-  return distance;
+      Les_Meilleurs[i] = i;
+    }
+
+  for(i=Critere; i<TailleChemin; i++)
+    {
+      if(Tab_Pop[i].GetDistance() < Tab_Pop[Les_Meilleurs[0]].GetDistance())
+	{
+	  for(j=1; j<Critere; j++)
+	    {
+	      if(Tab_Pop[i].GetDistance() > Tab_Pop[Les_Meilleurs[j]].GetDistance())
+		{
+		  Les_Meilleurs[j - 1] = i;
+		  j = Critere + 1;
+		}
+	    }
+	  if (j == Critere)
+	    Les_Meilleurs[Critere - 1] = i;
+	}
+    }
+  return Les_Meilleurs;
 }

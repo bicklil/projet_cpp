@@ -1,10 +1,9 @@
 #ifndef chromosome
 #define chromosome
 
-#include "Population.h"
 #include "Gene.h"
 
-class Chromosome: public Population
+class Chromosome
 {
  private:
   int taille;

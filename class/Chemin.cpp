@@ -19,7 +19,8 @@ Chemin:: Chemin(int nbv, int* T1, int* T2, int NV1, int NV2, double dist):Chromo
   // Pour generer un chemin au hasard, il faut inverser les position du tableau.
   // D'où l'existence de ces variables.
   int hasard1, hasard2, passage = 0;
-  distance = distance;
+  nbvilles = nbv;
+  distance = dist;
   LeChemin = new int[nbv];
   // Génère une série de numéro désignant les villes, le premier élément de la
   // liste est la première ville, le dernier élément la dernière ville.
@@ -67,6 +68,7 @@ Chemin:: Chemin(const Chemin& C)
   distance = C.distance;
   numville1 = C.numville1;
   numville2 = C.numville2;
+  LeChemin = new int[nbvilles];
   for(int i=0;i<nbvilles;i++)
     {
       LeChemin[i] = C.LeChemin[i];
@@ -91,4 +93,23 @@ int Chemin:: Getnbvilles()
 int* Chemin:: GetChemin()
 {
   return LeChemin;
+}
+
+Chemin& Chemin::operator=(const Chemin& C)
+{
+  if (this != &C)
+  {
+    nbvilles = C.nbvilles;
+    distance = C.distance;
+    numville1 = C.numville1;
+    numville2 = C.numville2;
+    if (LeChemin != 0)
+      delete [] LeChemin;
+    LeChemin = new int[nbvilles];
+    for(int i=0;i<nbvilles;i++)
+      {
+        LeChemin[i] = C.LeChemin[i];
+      }
+  }
+  return *this;
 }

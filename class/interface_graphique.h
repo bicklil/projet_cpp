@@ -1,6 +1,7 @@
 #ifndef algo_genetique
 #define algo_genetique
 #include "Population.h"
+#include "Fitness.h"
 #include "cng.h"
 #define VILLES 100
 #define ECART_MINI 30

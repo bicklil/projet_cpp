@@ -16,11 +16,11 @@ class Chemin:public Chromosome{
   void SetDistance(double);
   int* GetChemin();
   int Getnbvilles();
-  void init(int, int*, int*, int, int, double)
   Chemin();
   Chemin(int, int*, int*, int, int, double);
   ~Chemin();
   Chemin(const Chemin&);
+  Chemin& operator=(const Chemin&);
 };
 
 

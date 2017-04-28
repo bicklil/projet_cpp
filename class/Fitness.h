@@ -1,15 +1,16 @@
 #ifndef fitness
 #define fitness
 
-#include"Chemin.h"
+#include"Population.h"
 
 class Fitness{
  private:
-  int DistanceCalculee;
+  int Critere;
+  int TailleChemin;
  public:
   Fitness();
-  Fitness(int);
-  int GetDistance(Chemin&);
+  Fitness(int,int);
+  int* MeilleursChemins(Population);
 };
 
 #endif

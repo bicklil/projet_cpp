@@ -1,4 +1,5 @@
 #include "Gene.h"
+#include <iostream>
 
 Gene::Gene(){
   numGene = 0;
