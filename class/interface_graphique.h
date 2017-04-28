@@ -2,7 +2,11 @@
 #define algo_genetique
 #include "Chemin.h"
 #include "cng.h"
+#define VILLES 100
+#define ECART_MINI 10
 
 void dessin(void);
-int* Tableau_aleatoire(int, int, int);
+void Tableau_aleatoire(int, int, int, int, int, int*, int*);
+bool test_dist_mini(int*, int*, int , int , int );
+double calcul_distance(int ,int ,int ,int );
 #endif

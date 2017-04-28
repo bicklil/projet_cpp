@@ -1,19 +1,50 @@
 #include<stdlib.h>
 #include<cstdlib>
 #include<time.h>
+#include<math.h>
 #include"Algo_genetique.h"
 #include"cng.h"
-#define VILLES 100
 
 bool la_bool = true;
 
-void Tableau_aleatoire(int min, int max, int taille, int *T)
+// Si la distance dépasse un certain ecart, retourne faux.
+bool test_dist_mini(int* mapx, int* mapy, int nbrEffectue, int x, int y)
 {
+  for(int i=0; i<nbrEffectue; i++)
+  {
+    if (calcul_distance(x,y,mapx[i],mapy[i]) < ECART_MINI)
+    {
+      return false;
+    }
+  }
+  return true;
+}
+
+double calcul_distance(int x1,int y1,int x2,int y2)
+{
+  return sqrt(pow(x1-x2,2) +(pow(y1-y2,2)));
+}
+
+void Tableau_aleatoire(int minx, int maxx, int miny, int maxy, int taille, int* Tx, int* Ty)
+{
+  bool ecart_ver;
   srand(time(NULL));
   for(int i=0;i<taille;i++)
     {
       // Initialise une valeur comprise entre min et max dans le tableau.
-      T[i] = min + (rand() % (max - min));
+      Tx[i] = minx + (rand() % (maxx - minx));
+      Ty[i] = miny + (rand() % (maxy - miny));
+      ecart_ver = true;
+      for(int j=0;j<i;j++)
+	{
+	ecart_ver = test_dist_mini(Tx, Ty, j, Tx[i], Ty[i]);
+	if (ecart_ver == false)
+	  {
+	    j = 0;
+	    Tx[i] = minx + (rand() % (maxx - minx));
+	    Ty[i] = miny + (rand() % (maxy - miny));
+	  }
+	}
     }
 }
 
@@ -34,8 +65,7 @@ void dessin(void){
       }
     T1 = new int[VILLES];
     T2 = new int[VILLES];
-    Tableau_aleatoire(1, 800, VILLES, T1);
-    Tableau_aleatoire(1, 600, VILLES, T2);
+    Tableau_aleatoire(1, 800, 1, 600, VILLES, T1, T2);
     // Population de taille VILLES, première génération.
     // Génération d'un chemin partant de la ville portant le numéro Nville1
     // et finissant dans la ville numéro Nville2.
@@ -45,7 +75,7 @@ void dessin(void){
     cng_current_color(255, 0, 0);
     // Dessine de jolis cercles.
     for(int i=0; i<VILLES; i++) cng_circle(TabGenes[i].GetX(), TabGenes[i].GetY(), 3);
-    /* Bug avec std bad alloc, lié à Population.GetChemin().
+    // Bug avec std bad alloc, lié à Population.GetChemin().
     // Trace des lignes constituant le chemin.
     for(int j=0; j<VILLES-1; j++)
       {
@@ -55,7 +85,7 @@ void dessin(void){
 		 G1.GetY(),
 		 G2.GetX(),
 		 G2.GetY());
-		 }*/
+		 }
     cng_swap_screen();
     la_bool= false;
     delete[] T1;
