@@ -2,7 +2,7 @@
 #include<cstdlib>
 #include<time.h>
 #include<math.h>
-#include"Algo_genetique.h"
+#include"interface_graphique.h"
 #include"cng.h"
 
 bool la_bool = true;
