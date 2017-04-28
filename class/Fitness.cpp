@@ -7,6 +7,12 @@ Fitness:: Fitness()
   TailleChemin = 0;
 }
 
+Fitness:: Fitness(int C, int T)
+{
+  Critere = C;
+  TailleChemin = T;
+}
+
 int* Fitness:: MeilleursChemins(int Crit, int Tail, Population Tab_Pop)
 {
   Critere = Crit;

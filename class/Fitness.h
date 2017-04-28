@@ -9,6 +9,7 @@ class Fitness{
   int TailleChemin;
  public:
   Fitness();
+  Fitness(int, int);
   int* MeilleursChemins(int, int, Population);
 };
 
