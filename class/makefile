@@ -1,5 +1,5 @@
 CC= g++
-OBJ= Algo_genetique.o cng.o Chemin.o Chromosome.o Croisement.o Elitisme.o Fitness.o Gene.o Individu.o Mutation.o Options.o Population.o Recreation.o Selection.o Selection_par_rang.o Selection_par_tournoi.o Selection_roulette.o Selection_uniforme.o Ville.o
+OBJ= cng.o Chemin.o Chromosome.o Croisement.o Elitisme.o Fitness.o Gene.o interface_graphique.o Individu.o Mutation.o Options.o Population.o Recreation.o Selection.o Selection_par_rang.o Selection_par_tournoi.o Selection_roulette.o Selection_uniforme.o Ville.o
 
 main.exe: $(OBJ)
 	$(CC) $(OBJ) -o main.exe -L. -L/usr/include/GL -L/usr/X11R6/lib -lcng -lglut -lGLU -lGL -lX11 -lm
@@ -34,6 +34,9 @@ Gene.o: Gene.h Gene.cpp
 
 Individu.o: Individu.h Individu.cpp
 	$(CC) -c Individu.cpp
+
+interface_graphique.o: interface_graphique.h interface_graphique.cpp Chemin.h cng.h libcng.a
+	$(CC) -c interface_graphique.cpp
 
 Mutation.o: Mutation.h Mutation.cpp
 	$(CC) -c Mutation.cpp
