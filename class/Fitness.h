@@ -10,7 +10,7 @@ class Fitness{
  public:
   Fitness();
   Fitness(int, int);
-  int* MeilleursChemins(int, int, Population);
+  int* MeilleursChemins(Population);
   void DecalageaGauche(int*, int);
 };
 
