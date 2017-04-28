@@ -1,11 +1,18 @@
 #ifndef mutation
 #define mutation
+#include "Chemin.h"
 
 class Mutation{
-
-  private:
-  public:
-
+ private:
+  int nbMutations;
+  int nbChemins;
+  int tailleChemins;
+  Chemin* CheminsAMuter;
+ public:
+  Mutation();
+  Mutation(int, int, int, Chemin*);
+  ~Mutation();
+  Chemin* ResultatMutation();
 };
 
 #endif
