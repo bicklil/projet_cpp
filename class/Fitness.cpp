@@ -32,18 +32,18 @@ int* Fitness:: MeilleursChemins(int Crit, int Tail, Population Tab_Pop)
   TailleChemin = Tail;
   for(i=Crit; i<Tail; i++)
     {
-      if(Tab_Pop[i].GetDistance() < Tab_Pop[Les_Meilleurs[0]])
+      if(Tab_Pop[i].GetDistance() < Tab_Pop[Les_Meilleurs[0]].GetDistance())
 	{
 	  for(j=1; j<Crit; j++)
 	    {
 	      if(Tab_Pop[i].GetDistance() > Tab_Pop[Les_Meilleurs[j]].GetDistance())
 		{
-		  Tab_Pop[j - 1] = i;
+		  Les_Meilleurs[j - 1] = i;
 		  j = Crit + 1;
 		}
 	    }
 	  if (j == Crit)
-	    Tab_Pop[Crit - 1] = i;
+	    Les_Meilleurs[Crit - 1] = i;
 	}
     }
   return Les_Meilleurs;
