@@ -27,6 +27,17 @@ Chromosome:: Chromosome(const Chromosome& C)
     }
 }
 
+Chromosome& Chromosome::operator=(const Chromosome& C)
+{
+  if (this != &C)
+  {
+    taille = C.taille;
+    delete [] Genes;
+    Genes = new Gene[taille];
+    for (int i=0;i<taille;i++) Genes[i] = C.Genes[i];
+  }
+  return *this;
+}
 Chromosome:: ~Chromosome()
 {
   delete[] Genes;

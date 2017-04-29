@@ -78,8 +78,7 @@ void dessin(void){
     Pop.actu_distance();
 
     BestChemin = fit.MeilleursChemins(Pop);
-        std::cout << "/* message */" << '\n';
-    for(int k;k<3;k++ )
+    for(int k=0;k<3;k++ )
     {
       // Recupere le tableau des gènes.
       TabGenes = Pop[BestChemin[k]].Chromosome::GetGene();

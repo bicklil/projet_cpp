@@ -12,6 +12,7 @@ class Chromosome
   Chromosome();
   Chromosome(int, int*, int*);
   Chromosome(const Chromosome&);
+  Chromosome& operator=(const Chromosome& );
   ~Chromosome();
   int GetTaille();
   Gene* GetGene();
