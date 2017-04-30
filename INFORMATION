@@ -1,3 +1,8 @@
 j'ai debug le probleme je vais fusionner les fichiers ce soir
 prevenez moi sur ce fichier si vous taffer dessus
 des bisous
+Salut,
+préviens-moi si Croisement.cpp et Croisement.h te cause des problèmes.
+D'ailleurs, c'est normal que Fitness te renvoie un tableau décroissant,
+plus le chemin est court, meilleur il est du coup les meilleurs chemins sont
+placés à la fin du tableau.
