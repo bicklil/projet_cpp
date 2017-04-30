@@ -1,4 +1,5 @@
 #include"Chromosome.h"
+#include <iostream>
 
 Chromosome:: Chromosome()
 {
@@ -19,8 +20,24 @@ Chromosome:: Chromosome(int t, int* T1, int* T2)
 Chromosome:: Chromosome(const Chromosome& C)
 {
   taille = C.taille;
+  Genes = new Gene[taille];
+  for (int i=0; i< taille; i++)
+    {
+      Genes[i] = C.Genes[i];
+    }
 }
 
+Chromosome& Chromosome::operator=(const Chromosome& C)
+{
+  if (this != &C)
+  {
+    taille = C.taille;
+    delete [] Genes;
+    Genes = new Gene[taille];
+    for (int i=0;i<taille;i++) Genes[i] = C.Genes[i];
+  }
+  return *this;
+}
 Chromosome:: ~Chromosome()
 {
   delete[] Genes;

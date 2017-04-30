@@ -30,7 +30,7 @@ void Population:: GenerationUp()
   // fonction de la mort qui up le bordel
 }
 
-Chemin Population::operator[](int ind)
+Chemin& Population::operator[](int ind)
 {
   return listeChemin[ind];
 }
@@ -43,12 +43,15 @@ void Population::actu_distance()
   for(int i=0;i<taille;i++)
   {
     distance_chemin = 0;
-    TabGenes = this->operator[](i).Chromosome::GetGene();
-    for(int j=0; j<taille-1; j++)
+    TabGenes = (*this)[i].GetGene();
+    for(int j=0; j<(*this)[i].Getnbvilles()-1; j++)
       {
-        G1 = TabGenes[this->operator[](i).GetChemin()[j]];
-        G2 = TabGenes[this->operator[](i).GetChemin()[j + 1]];
-	distance_chemin += calcul_distance(G1.GetX(), G1.GetY(), G2.GetX(), G2.GetY());
+      //  std::cout << TabGenes[(*this)[i].GetChemin()[j]].GetY() << '\n';
+        G1 = TabGenes[((*this)[i].GetChemin())[j]];
+        G2 = TabGenes[((*this)[i].GetChemin())[j + 1]];
+
+	      distance_chemin += calcul_distance(G1.GetX(), G1.GetY(), G2.GetX(), G2.GetY());
       }
-  }
+    this->operator[](i).SetDistance(distance_chemin);
+}
 }

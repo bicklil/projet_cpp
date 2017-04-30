@@ -1,5 +1,6 @@
 #include"Fitness.h"
 #include<cmath>
+#include <iostream>
 
 Fitness:: Fitness()
 {
@@ -25,19 +26,16 @@ int* Fitness:: MeilleursChemins(Population Tab_Pop)
 {
   int i, j;
   int* Les_Meilleurs;
-  if(Critere > TailleChemin)
-    {
-      return 0;
-    }
   Les_Meilleurs = new int[Critere];
+  for (i=0;i<Critere;i++) Les_Meilleurs[i] = i;
   for (i=0;i<Critere;i++)
     {
       for(j=0;j<i;j++)
-	{
-	  if (Tab_Pop[Les_Meilleurs[j]].GetDistance() < Tab_Pop[Les_Meilleurs[i]].GetDistance())
-	  this->DecalageaGauche(Les_Meilleurs, j);
-	  Les_Meilleurs[j] = i;
-	}
+    	{
+    	  if (Tab_Pop[Les_Meilleurs[j]].GetDistance() < Tab_Pop[Les_Meilleurs[i]].GetDistance())
+    	  this->DecalageaGauche(Les_Meilleurs, j);
+    	  Les_Meilleurs[j] = i;
+    	}
     }
   for(i=Critere; i<TailleChemin; i++)
     {

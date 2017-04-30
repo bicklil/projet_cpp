@@ -8,6 +8,7 @@ Ville::Ville(){
 }
 
 Ville::Ville(int nv, int pos_x, int pos_y){
+  //std::cout << nv<< '\n';
   numville = nv;
   x = pos_x;
   y = pos_y;

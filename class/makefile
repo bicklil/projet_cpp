@@ -2,7 +2,7 @@ CC= g++
 OBJ= cng.o Chemin.o Chromosome.o Croisement.o Elitisme.o Fitness.o Gene.o interface_graphique.o Individu.o Mutation.o Options.o Population.o Recreation.o Selection.o Selection_par_rang.o Selection_par_tournoi.o Selection_roulette.o Selection_uniforme.o Ville.o
 
 main.exe: $(OBJ)
-	$(CC) $(OBJ) -o main.exe -L. -L/usr/include/GL -L/usr/X11R6/lib -lcng -lglut -lGLU -lGL -lX11 -lm
+	$(CC) $(OBJ) -g -o main.exe -L. -L/usr/include/GL -L/usr/X11R6/lib -lcng -lglut -lGLU -lGL -lX11 -lm
 
 Algo_genetique.o: Algo_genetique.h Algo_genetique.cpp Chemin.h cng.h libcng.a
 	$(CC) -c Algo_genetique.cpp

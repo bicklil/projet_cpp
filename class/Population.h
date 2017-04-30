@@ -2,7 +2,7 @@
 #define population
 
 #include "Chemin.h"
-
+#include <math.h>
 class Population
 {
  private:
@@ -13,7 +13,7 @@ class Population
   Population();
   Population(int, int, int* , int*, int , int , double);
   void GenerationUp();
-  Chemin operator[](int);
+  Chemin& operator[](int);
   void actu_distance();
 };
 

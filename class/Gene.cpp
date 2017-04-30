@@ -1,4 +1,5 @@
 #include "Gene.h"
+#include <iostream>
 
 Gene::Gene(){
   numGene = 0;
@@ -15,6 +16,13 @@ void Gene:: SetVille(int nouveaunum, int nouveaux, int nouveauy){
   VilleEq = Ville(nouveaunum, nouveaux, nouveauy);
 }
 
+Gene& Gene::operator=(const Gene& G)
+{
+  numGene = G.numGene;
+  VilleEq = G.VilleEq;
+  return *this;
+}
+
 int Gene::GetGene(){
     return numGene;
     }
@@ -24,7 +32,7 @@ int Gene::GetX()
   return VilleEq.GetPos_X();
 }
 
-int Gene:: GetY()
+int Gene::GetY()
 {
   return VilleEq.GetPos_Y();
 }

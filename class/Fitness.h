@@ -1,3 +1,4 @@
+
 #ifndef fitness
 #define fitness
 
@@ -10,7 +11,7 @@ class Fitness{
  public:
   Fitness();
   Fitness(int, int);
-  int* MeilleursChemins(Population);
+  int* MeilleursChemins( Population);
   void DecalageaGauche(int*, int);
 };
 

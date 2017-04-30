@@ -20,6 +20,7 @@ class Chemin:public Chromosome{
   Chemin(int, int*, int*, int, int, double);
   ~Chemin();
   Chemin(const Chemin&);
+  Chemin& operator=(const Chemin&);
 };
 
 

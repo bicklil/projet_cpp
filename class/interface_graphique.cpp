@@ -28,10 +28,7 @@ bool test_dist_mini(int* mapx, int* mapy, int nbrEffectue, int x, int y)
   return true;
 }
 
-double Calcul_distance(int x1,int y1,int x2,int y2)
-{
-  return sqrt(pow(x1-x2,2) +(pow(y1-y2,2)));
-}
+
 
 void Tableau_aleatoire(int minx, int maxx, int miny, int maxy, int taille, int* Tx, int* Ty)
 {
@@ -57,48 +54,52 @@ void Tableau_aleatoire(int minx, int maxx, int miny, int maxy, int taille, int* 
 }
 
 void dessin(void){
-  if (nb_chemins == 0)
-    {
-      srand(time(NULL));
-      Nville1 = 1 + rand()%VILLES;
-      Nville2 = 1 + rand()%VILLES;
-      while(Nville1 == Nville2)
-	{
-	  Nville2 = 1 + rand()%VILLES;
-	}
-      T1 = new int[VILLES];
-      T2 = new int[VILLES];
-      Tableau_aleatoire(1, 800, 1, 600, VILLES, T1, T2);
-    }
-  if(nb_chemins < NbChemins){
+  if(la_bool){
+    srand(time(NULL));
+    // La première et la dernière ville du chemin.
+    int Nville1, Nville2;
+    int nbrInd = 100;
+    int* BestChemin;
+    int color[9] = {0,255,0,0,0,100,255,0,0};
+    Fitness fit(3,VILLES);
     Gene* TabGenes;
     Gene G1, G2;
     double distance_chemin = 0;
+    // Tableaux contenant les coordonnées x et y des villes.
+    int *T1, *T2;
+    Nville1 = 1 + rand()%VILLES;
+    Nville2 = 1 + rand()%VILLES;
+    while(Nville1 == Nville2)
+      {
+	         Nville2 = 1 + rand()%VILLES;
+      }
+    T1 = new int[VILLES];
+    T2 = new int[VILLES];
+    Tableau_aleatoire(1, 800, 1, 600, VILLES, T1, T2);
     // Population de taille VILLES, première génération.
     // Génération d'un chemin partant de la ville portant le numéro Nville1
     // et finissant dans la ville numéro Nville2.
-    Chemin Population(VILLES, T1, T2, Nville1, Nville2, 0);
-    // Recupere le tableau des gènes.
-    TabGenes = Population.Chromosome::GetGene();
-    cng_current_color(255, 0, 0);
-    // Dessine de jolis cercles.
-    for(int i=0; i<VILLES; i++) cng_circle(TabGenes[i].GetX(), TabGenes[i].GetY(), 6);
-    // Bug avec std bad alloc, lié à Population.GetChemin().
-    // Trace des lignes constituant le chemin.
-    cng_current_color(255,255,255);
-    for(int j=0; j<VILLES-1; j++)
-      {
-	G1 = TabGenes[Population.GetChemin()[j]];
-	G2 = TabGenes[Population.GetChemin()[j + 1]];
-	cng_line(G1.GetX(),
-		 G1.GetY(),
-		 G2.GetX(),
-		 G2.GetY());
-	distance_chemin += Calcul_distance(G1.GetX(), G1.GetY(), G2.GetX(), G2.GetY());
-      }
-    Population.SetDistance(distance_chemin);
-    TabGenes = 0;
-    nb_chemins ++;
+    Population Pop(nbrInd, VILLES, T1, T2, Nville1, Nville2, 0);
+
+    Pop.actu_distance();
+
+    BestChemin = fit.MeilleursChemins(Pop);
+    for(int k=0;k<3;k++ )
+    {
+      // Recupere le tableau des gènes.
+      TabGenes = Pop[BestChemin[k]].Chromosome::GetGene();
+      cng_current_color(255, 0, 0);
+      // Dessine de jolis cercles.
+      for(int i=0; i<VILLES; i++) cng_circle(TabGenes[i].GetX(), TabGenes[i].GetY(), 6);
+      for(int j=0; j<VILLES-1; j++)
+        {
+        	G1 = TabGenes[Pop[BestChemin[k]].GetChemin()[j]];
+        	G2 = TabGenes[Pop[BestChemin[k]].GetChemin()[j + 1]];
+          cng_current_color(color[k],color[k+1],color[k+2]);
+        	cng_line(G1.GetX(),G1.GetY(),G2.GetX(),G2.GetY());
+        }
+      cout << Pop[BestChemin[k]].GetDistance() << endl;
+    }
     cng_swap_screen();
     usleep(1000000);
   }
