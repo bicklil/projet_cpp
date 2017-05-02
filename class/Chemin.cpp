@@ -1,6 +1,7 @@
 #include"Chemin.h"
 #include <cstdlib>
 #include <iostream>
+#include <time.h>
 
 Chemin:: Chemin()
 {
@@ -16,6 +17,7 @@ Chemin:: Chemin()
 // NV2 le numero de la ville d'arrivée.
 Chemin:: Chemin(int nbv, int* T1, int* T2, int NV1, int NV2, double dist):Chromosome(nbv, T1, T2)
 {
+  srand(time(NULL));
   // Pour generer un chemin au hasard, il faut inverser les position du tableau.
   // D'où l'existence de ces variables.
   int hasard1, hasard2, passage = 0;
@@ -53,7 +55,6 @@ Chemin:: Chemin(int nbv, int* T1, int* T2, int NV1, int NV2, double dist):Chromo
       LeChemin[hasard1] = LeChemin[hasard2];
       LeChemin[hasard2] = passage;
     }
-    std::cout << this->GetGene() << '\n';
 }
 
 Chemin:: ~Chemin()
@@ -96,9 +97,6 @@ int* Chemin:: GetChemin()
 
 Chemin& Chemin::operator=(const Chemin& C)
 {
-  std::cout << "s" << '\n';
-  std::cout << this->GetGene() << '\n';
-//  std::cout << C.GetGene() << '\n';
   if (this != &C)
   {
     this->Chromosome::operator=(C);
@@ -108,8 +106,8 @@ Chemin& Chemin::operator=(const Chemin& C)
     numville2 = C.numville2;
     if (LeChemin != 0)
       delete [] LeChemin;
-    LeChemin = new int[nbvilles];
-    for(int i=0;i<nbvilles;i++)
+    LeChemin = new int[C.nbvilles];
+    for(int i=0;i<C.nbvilles;i++)
       {
         LeChemin[i] = C.LeChemin[i];
       }

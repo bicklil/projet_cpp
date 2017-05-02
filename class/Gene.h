@@ -10,7 +10,6 @@ class Gene
   public:
     Gene();
     Gene(const Gene&);
-    Gene(int, int, int);
     void SetVille(int nouveaunum, int nouveaux, int nouveauy);
     Gene& operator=(const Gene& );
     int GetGene();

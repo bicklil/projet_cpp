@@ -3,19 +3,13 @@
 
 Gene::Gene(){
   numGene = 0;
-  VilleEq = Ville();
+  VilleEq = Ville(0, 0, 0);
 }
 
 Gene::Gene(const Gene& g){
     numGene = g.numGene;
     VilleEq = g.VilleEq;
     }
-
-Gene::Gene(int num, int x, int y)
-{
-  numGene = num;
-  VilleEq = Ville(num, x, y);
-}
 
 void Gene:: SetVille(int nouveaunum, int nouveaux, int nouveauy){
   numGene = nouveaunum;

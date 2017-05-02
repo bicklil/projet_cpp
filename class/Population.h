@@ -12,7 +12,7 @@ class Population
  public:
   Population();
   Population(int, int, int* , int*, int , int , double);
-  ~Population();
+  Chemin* GetChemin();
   void GenerationUp();
   Chemin& operator[](int);
   void actu_distance();

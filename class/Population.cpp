@@ -1,5 +1,7 @@
 #include "Population.h"
-
+#include <math.h>
+#include <iostream>
+using namespace std;
 
 double calcul_distance(int x1,int y1,int x2,int y2)
 {
@@ -20,13 +22,8 @@ Population:: Population(int t, int nbv, int* T1, int* T2, int NV1, int NV2, doub
   listeChemin = new Chemin[t];
   for(int i=0;i<t;i++)
   {
-    listeChemin[t] = Chemin(nbv, T1, T2, NV1, NV2, 0);
+    listeChemin[i] = Chemin(nbv, T1, T2, NV1, NV2, 0);
   }
-}
-
-Population::~Population()
-{
-  delete [] listeChemin;
 }
 
 void Population:: GenerationUp()
@@ -58,5 +55,10 @@ void Population::actu_distance()
 	      distance_chemin += calcul_distance(G1.GetX(), G1.GetY(), G2.GetX(), G2.GetY());
       }
     this->operator[](i).SetDistance(distance_chemin);
+  }
 }
+
+Chemin* Population::GetChemin()
+{
+  return listeChemin;
 }
