@@ -11,6 +11,7 @@ class Chemin:public Chromosome{
   int numville1;
   int numville2;
   double distance;
+
  public:
   double GetDistance();
   void SetDistance(double);

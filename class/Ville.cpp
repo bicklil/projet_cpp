@@ -21,10 +21,3 @@ int Ville::GetPos_X(){
 int Ville::GetPos_Y(){
     return y;
     }
-
-Ville& Ville::operator=(const Ville &V2)
-{
-  numville = V2.numville;
-  x = V2.x;
-  y = V2.y;
-}

@@ -1,4 +1,4 @@
-CC= g++
+CC= g++ -Wall
 OBJ= cng.o Chemin.o Chromosome.o Croisement.o Elitisme.o Fitness.o Gene.o interface_graphique.o Individu.o Mutation.o Options.o Population.o Recreation.o Selection.o Selection_par_rang.o Selection_par_tournoi.o Selection_roulette.o Selection_uniforme.o Ville.o
 
 main.exe: $(OBJ)

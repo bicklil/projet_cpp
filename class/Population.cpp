@@ -1,5 +1,5 @@
 #include "Population.h"
-#include <math.h>
+
 
 double calcul_distance(int x1,int y1,int x2,int y2)
 {
@@ -22,6 +22,11 @@ Population:: Population(int t, int nbv, int* T1, int* T2, int NV1, int NV2, doub
   {
     listeChemin[t] = Chemin(nbv, T1, T2, NV1, NV2, 0);
   }
+}
+
+Population::~Population()
+{
+  delete [] listeChemin;
 }
 
 void Population:: GenerationUp()

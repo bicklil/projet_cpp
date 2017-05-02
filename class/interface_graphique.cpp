@@ -4,16 +4,15 @@
 #include<math.h>
 #include"interface_graphique.h"
 #include"cng.h"
-#include<unistd.h>
 #include<iostream>
 using namespace std;
 
-int nb_chemins = 0;
-int nb_generations = 0;
+bool la_bool = true;
+
 // La première et la dernière ville du chemin.
-static int Nville1, Nville2;
+//static int Nville1, Nville2;
 // Tableaux contenant les coordonnées x et y des villes.
-static int *T1, *T2;
+
 
 // Si la distance dépasse un certain ecart, retourne faux.
 bool test_dist_mini(int* mapx, int* mapy, int nbrEffectue, int x, int y)
@@ -28,6 +27,10 @@ bool test_dist_mini(int* mapx, int* mapy, int nbrEffectue, int x, int y)
   return true;
 }
 
+double Calcul_distance(int x1,int y1,int x2,int y2)
+{
+  return sqrt( pow(x1-x2,2) + ( pow(y1-y2,2) ));
+}
 
 
 void Tableau_aleatoire(int minx, int maxx, int miny, int maxy, int taille, int* Tx, int* Ty)
@@ -64,7 +67,6 @@ void dessin(void){
     Fitness fit(3,VILLES);
     Gene* TabGenes;
     Gene G1, G2;
-    double distance_chemin = 0;
     // Tableaux contenant les coordonnées x et y des villes.
     int *T1, *T2;
     Nville1 = 1 + rand()%VILLES;
@@ -75,6 +77,7 @@ void dessin(void){
       }
     T1 = new int[VILLES];
     T2 = new int[VILLES];
+    cout << Nville1 << " " << Nville2 << endl;
     Tableau_aleatoire(1, 800, 1, 600, VILLES, T1, T2);
     // Population de taille VILLES, première génération.
     // Génération d'un chemin partant de la ville portant le numéro Nville1
@@ -101,13 +104,10 @@ void dessin(void){
       cout << Pop[BestChemin[k]].GetDistance() << endl;
     }
     cng_swap_screen();
-    usleep(1000000);
+    la_bool = false;
+    delete[] T1;
+    delete[] T2;
   }
-  else
-    {
-      delete[] T1;
-      delete[] T2;
-    }
 }
 
 // Initialisation de l'algorithme génétique.

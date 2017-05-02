@@ -7,7 +7,6 @@ class Ville{
  public:
   Ville();
   Ville(int, int, int);
-  Ville& operator=(const Ville&);
   int GetPos_X();
   int GetPos_Y();
 };
