@@ -28,7 +28,7 @@ int* Fitness:: MeilleursChemins(Population Tab_Pop)
   int* Les_Meilleurs;
   Les_Meilleurs = new int[Critere];
   for (i=0;i<Critere;i++) Les_Meilleurs[i] = i;
-  for (i=0;i<Critere;i++)1
+  for (i=0;i<Critere;i++)
     {
       for(j=0;j<i;j++)
     	{
