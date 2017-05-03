@@ -51,8 +51,7 @@ void Population::actu_distance()
       //  std::cout << TabGenes[(*this)[i].GetChemin()[j]].GetY() << '\n';
         G1 = TabGenes[((*this)[i].GetChemin())[j]];
         G2 = TabGenes[((*this)[i].GetChemin())[j + 1]];
-
-	      distance_chemin += calcul_distance(G1.GetX(), G1.GetY(), G2.GetX(), G2.GetY());
+	distance_chemin += calcul_distance(G1.GetX(), G1.GetY(), G2.GetX(), G2.GetY());
       }
     this->operator[](i).SetDistance(distance_chemin);
   }

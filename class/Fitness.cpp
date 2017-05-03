@@ -16,19 +16,17 @@ Fitness:: Fitness(int C, int T)
 
 void Fitness::DecalageaGauche(int* T, int taille)
 {
-  for(int i=0;i<taille-1;i++)
+  for(int i=0;i<taille;i++)
     {
       T[i]=T[i+1];
     }
 }
 
-int* Fitness:: MeilleursChemins(Population Tab_Pop)
+void Fitness:: MeilleursChemins(Population Tab_Pop, int* Les_Meilleurs)
 {
   int i, j;
-  int* Les_Meilleurs;
-  Les_Meilleurs = new int[Critere];
   for (i=0;i<Critere;i++) Les_Meilleurs[i] = i;
-  for (i=0;i<Critere;i++)
+  for (i=1;i<Critere;i++)
     {
       for(j=0;j<i;j++)
     	{
@@ -41,7 +39,7 @@ int* Fitness:: MeilleursChemins(Population Tab_Pop)
 	  else if ((j == i-1) and (Tab_Pop[Les_Meilleurs[j]].GetDistance() < Tab_Pop[Les_Meilleurs[i]].GetDistance()))
 	    {
 	      this->DecalageaGauche(Les_Meilleurs, j);
-	      Les_Meilleurs[j] = j - 1;
+	      Les_Meilleurs[j] = i;
 	      j = i;
 	    }
     	}
@@ -58,13 +56,13 @@ int* Fitness:: MeilleursChemins(Population Tab_Pop)
 		  Les_Meilleurs[j - 1] = i;
 		  j = Critere;
 		}
-	    }
-	  if (j == Critere)
-	    {
-	      this->DecalageaGauche(Les_Meilleurs, j - 1);
-	      Les_Meilleurs[Critere - 1] = i;
+	      else if (j==Critere-1)
+		{
+		  this->DecalageaGauche(Les_Meilleurs, j);
+		  Les_Meilleurs[j] = i;
+		  j ++;
+		}
 	    }
 	}
     }
-  return Les_Meilleurs;
 }
