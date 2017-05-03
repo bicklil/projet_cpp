@@ -73,7 +73,6 @@ void dessin(void){
     Tableau_aleatoire(1, 800, 1, 600, VILLES, T1, T2);
   }
   if(nb_chemins < NbChemins){
-    cout << nb_chemins << endl;
     int nbrInd = 100;
     int color[9] = {0,255,0,0,0,100,255,0,0};
     Fitness fit(3,VILLES);
@@ -87,9 +86,7 @@ void dessin(void){
     Population Pop(nbrInd, VILLES, T1, T2, Nville1, Nville2, 0);
     Pop.actu_distance();
     int i = 0;
-    cout << "Haha" << endl;
     fit.MeilleursChemins(Pop, BestChemins);
-    cout << "BOUMBOUM"<<endl;
     for(int k=0;k<3;k++)
     {
       // Recupere le tableau des gènes.
