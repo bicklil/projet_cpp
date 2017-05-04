@@ -13,9 +13,10 @@ Mutation:: Mutation()
 Mutation:: Mutation(int nMut, int nChem, int tChem, Chemin* Cam)
 {
   nbMutations = nMut;
-  CheminsAMuter = Cam;
   nbChemins = nChem;
   tailleChemins = tChem;
+  CheminsAMuter = new Chemin[nChem];
+  for (int i=0;i<nChem;i++) CheminsAMuter[i] = Cam[i];
 }
 
 Mutation:: ~Mutation()
@@ -32,13 +33,13 @@ Chemin* Mutation:: ResultatMutation()
     {
       Chem = CheminsAMuter[j].GetChemin();
       for(int k=0; k<nbMutations; k++)
-	{
-	  hasard1 = 1 + rand()%(nbChemins-1);
-	  hasard2 = 1 + rand()%(nbChemins-1);
-	  passage = Chem[hasard1];
-	  Chem[hasard1] = Chem[hasard2];
-	  Chem[hasard2] = passage;
-	}
+    	{
+    	  hasard1 = 1 + rand()%(nbChemins-1);
+    	  hasard2 = 1 + rand()%(nbChemins-1);
+    	  passage = Chem[hasard1];
+    	  Chem[hasard1] = Chem[hasard2];
+    	  Chem[hasard2] = passage;
+    	}
     }
-  return 0;
+  return CheminsAMuter;
 }

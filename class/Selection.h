@@ -5,11 +5,12 @@ class Selection
 {
  private:
   int NombreChemins;
-  Chemin * Chemins;
+  int * Chemins;
  public:
   Selection();
-  Selection(int, Chemin *);
+  Selection(int);
   ~Selection();
   int GetNombreChemins();
+  int* GetindChemins();
 };
 #endif

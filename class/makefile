@@ -1,5 +1,5 @@
-CC= g++
-OBJ= cng.o Chemin.o Chromosome.o Croisement.o Elitisme.o Fitness.o Gene.o interface_graphique.o Individu.o Mutation.o Options.o Population.o Recreation.o Selection.o Selection_par_rang.o Selection_par_tournoi.o Selection_roulette.o Selection_uniforme.o Ville.o
+CC= g++ -Wall
+OBJ= cng.o Algo_genetique.o Chemin.o Chromosome.o Croisement.o Elitisme.o Fitness.o Gene.o interface_graphique.o Individu.o Mutation.o Options.o Population.o Recreation.o Selection.o Selection_par_rang.o Selection_par_tournoi.o Selection_uniforme.o Ville.o
 
 main.exe: $(OBJ)
 	$(CC) $(OBJ) -g -o main.exe -L. -L/usr/include/GL -L/usr/X11R6/lib -lcng -lglut -lGLU -lGL -lX11 -lm
@@ -15,7 +15,7 @@ cng.o: cng.h cng.c
 	gcc -c cng.c
 
 Chemin.o: Chemin.h Chemin.cpp Fitness.h Chromosome.h
-	$(CC) -std=c++11 -c Chemin.cpp
+	$(CC) -std=c++0x -c Chemin.cpp
 
 Chromosome.o: Chromosome.h Chromosome.cpp Croisement.h
 	$(CC) -c Chromosome.cpp
@@ -45,7 +45,7 @@ Options.o: Options.h Options.cpp
 	$(CC) -c Options.cpp
 
 Population.o: Population.h Population.cpp Chromosome.h
-	$(CC) -std=c++11 -c Population.cpp
+	$(CC) -std=c++0x -c Population.cpp
 
 Recreation.o: Recreation.h Recreation.cpp Chromosome.h Selection.h Ville.h
 	$(CC) -c Recreation.cpp

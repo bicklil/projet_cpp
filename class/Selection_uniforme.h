@@ -4,7 +4,8 @@
 class Selection_uniforme:public Selection
 {
   private:
-    float Probabilite;
+    int nbelus;
   public:
+    Selection_uniforme(int , Chemin * , int );
 };
 #endif

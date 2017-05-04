@@ -1,5 +1,6 @@
 #include "Population.h"
 #include <math.h>
+#include "Algo_genetique.h"
 #include <iostream>
 using namespace std;
 
@@ -29,7 +30,7 @@ Population:: Population(int t, int nbv, int* T1, int* T2, int NV1, int NV2, doub
 void Population:: GenerationUp()
 {
   generation++;
-  // fonction de la mort qui up le bordel
+  generation_up(*this);
 }
 
 Chemin& Population::operator[](int ind)

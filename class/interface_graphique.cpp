@@ -79,13 +79,13 @@ void dessin(void){
     //BestChemins = new int[3];
     Gene* TabGenes;
     Gene G1, G2;
-    double distance_chemin = 0;
+    //double distance_chemin = 0;
     // Population de taille VILLES, première génération.
     // Génération d'un chemin partant de la ville portant le numéro Nville1
     // et finissant dans la ville numéro Nville2.
     Population Pop(nbrInd, VILLES, T1, T2, Nville1, Nville2, 0);
     Pop.actu_distance();
-    int i = 0;
+    //int i = 0;
     fit.MeilleursChemins(Pop, BestChemins);
     for(int k=0;k<3;k++)
     {

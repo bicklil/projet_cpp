@@ -7,13 +7,11 @@ Selection:: Selection()
   Chemins = 0;
 }
 
-Selection:: Selection(int nombre, Chemin * chemins)
+Selection:: Selection(int nombre)
 {
-  Chemins = new Chemin[NombreChemins];
-  for (int i=0; i<nombre; i++)
-    {
-      Chemins[i] = chemins[i];
-    }
+  NombreChemins = nombre;
+  Chemins = new int[NombreChemins];
+  for (int i=0;i<NombreChemins;i++) Chemins[i] = -1;
 }
 
 Selection:: ~Selection()
@@ -24,4 +22,9 @@ Selection:: ~Selection()
 int Selection:: GetNombreChemins()
 {
   return NombreChemins;
+}
+
+int* Selection:: GetindChemins()
+{
+  return Chemins;
 }

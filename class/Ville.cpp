@@ -27,4 +27,5 @@ Ville& Ville::operator=(const Ville &V2)
   numville = V2.numville;
   x = V2.x;
   y = V2.y;
+  return *this;
 }

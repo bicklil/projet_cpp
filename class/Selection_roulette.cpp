@@ -5,7 +5,7 @@ Selection_roulette:: Selection_roulette():Selection()
   probabilite = 0;
 }
 
-Selection_roulette:: Selection_roulette(int nombrec, Chemin* Listec, float proba, int nbelus): Selection(nombrec, Listec)
+Selection_roulette:: Selection_roulette(int nombrec, Chemin* Listec, float proba, int nbelus): Selection(nbelus)
 {
   // Nombre de non elus.
   int nbnel=0;
@@ -16,20 +16,20 @@ Selection_roulette:: Selection_roulette(int nombrec, Chemin* Listec, float proba
     {
       sco = Listec[i].GetDistance();
       if (sco > max)
-	{
-	  max = sco;
-	}
+    	{
+    	  max = sco;
+    	}
     }
   while (nbnel < nbelus)
     {
       for(int i=0; i<nombrec; i++)
-	{
-	  chance = rand() * ( Listec[i].GetDistance() / (max + 1));
-	  if (chance > proba)
-	    {
-	      Listec;
-	      nbnel ++;
-	    }
-	}
-    }
+    	{
+    	  chance = rand() * ( Listec[i].GetDistance() / (max + 1));
+    	  if (chance > proba)
+    	    {
+    	      Listec;
+    	      nbnel ++;
+    	    }
+    	}
+   }
 }

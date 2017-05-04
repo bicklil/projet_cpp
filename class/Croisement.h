@@ -5,13 +5,12 @@
 class Croisement{
  private:
   int ptCroisement;
-  int indCroisement1;
-  int indCroisement2;
+  int tailleChem;
   Chemin* LesChemins;
   int tailleChemins;
  public:
   Croisement();
-  Croisement(int, int, int, int, Chemin*);
+  Croisement(int, int, int, Chemin*);
   ~Croisement();
   void Execution_Croisement();
   Chemin* Get_Chemins();
