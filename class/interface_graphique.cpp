@@ -14,7 +14,8 @@ int nb_generations = 0;
 static int Nville1, Nville2;
 // Tableaux contenant les coordonnées x et y des villes.
 static int *T1, *T2;
-int BestChemins[3] = {1, 2, 3};
+static Population Pop;
+int* BestChemins = new int[100];
 
 double Calcul_distance(int x1,int y1,int x2,int y2)
 {
@@ -71,11 +72,13 @@ void dessin(void){
     T1 = new int[VILLES];
     T2 = new int[VILLES];
     Tableau_aleatoire(1, 800, 1, 600, VILLES, T1, T2);
+    int nbrInd = 100;
+    Pop = Population(nbrInd, VILLES, T1, T2, Nville1, Nville2, 0);
   }
   if(nb_chemins < NbChemins){
-    int nbrInd = 100;
+
     int color[9] = {0,255,0,0,0,100,255,0,0};
-    Fitness fit(3,VILLES);
+    Fitness fit(100,VILLES);
     //BestChemins = new int[3];
     Gene* TabGenes;
     Gene G1, G2;
@@ -83,11 +86,11 @@ void dessin(void){
     // Population de taille VILLES, première génération.
     // Génération d'un chemin partant de la ville portant le numéro Nville1
     // et finissant dans la ville numéro Nville2.
-    Population Pop(nbrInd, VILLES, T1, T2, Nville1, Nville2, 0);
+
     Pop.actu_distance();
     //int i = 0;
     fit.MeilleursChemins(Pop, BestChemins);
-    for(int k=0;k<3;k++)
+    for(int k=0;k<1;k++)
     {
       // Recupere le tableau des gènes.
       TabGenes = Pop[BestChemins[k]].Chromosome::GetGene();
@@ -102,9 +105,11 @@ void dessin(void){
 	  cng_line(G1.GetX(),G1.GetY(),G2.GetX(),G2.GetY());
 	}
       cout << Pop[BestChemins[k]].GetDistance() << endl;
+
     }
+    Pop.GenerationUp();
     //delete[] BestChemins;
-    usleep(1000000);
+    usleep(10000);
     nb_chemins ++;
     cng_swap_screen();
     cng_clear_screen();

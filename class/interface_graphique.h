@@ -5,7 +5,7 @@
 #include "cng.h"
 #define VILLES 100
 #define ECART_MINI 30
-#define NbChemins 10
+#define NbChemins 500000000
 
 void dessin(void);
 void Tableau_aleatoire(int, int, int, int, int, int*, int*);
