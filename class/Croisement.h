@@ -14,6 +14,7 @@ class Croisement{
   ~Croisement();
   void Execution_Croisement();
   Chemin* Get_Chemins();
+  void Modification_ptCroisement();
 };
 
 #endif

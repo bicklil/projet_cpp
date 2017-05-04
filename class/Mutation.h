@@ -8,9 +8,10 @@ class Mutation{
   int nbChemins;
   int tailleChemins;
   Chemin* CheminsAMuter;
+  int nbChTouche ;
  public:
   Mutation();
-  Mutation(int, int, int, Chemin*);
+  Mutation(int, int, int, int, Chemin*);
   ~Mutation();
   Chemin* ResultatMutation();
 };

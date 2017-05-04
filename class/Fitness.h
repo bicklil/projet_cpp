@@ -11,6 +11,7 @@ class Fitness{
   Fitness();
   Fitness(int, int);
   void MeilleursChemins(Population, int*);
+  void PiresChemins(Population, int*);
   void DecalageaGauche(int*, int);
 };
 

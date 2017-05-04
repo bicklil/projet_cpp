@@ -1,4 +1,5 @@
 #include"Croisement.h"
+#include <cstdlib>
 
 Croisement::Croisement()
 {
@@ -21,6 +22,10 @@ Croisement::~Croisement()
   delete[] LesChemins;
 }
 
+void Croisement::Modification_ptCroisement()
+{
+  ptCroisement = rand() % tailleChemins;
+}
 void Croisement::Execution_Croisement()
 {
   // Il nous faut échanger deux villes pour effectuer un croisement;
@@ -30,6 +35,7 @@ void Croisement::Execution_Croisement()
   int ville1, ville2;
   for(int j=0;j<tailleChem;j = j*2)
   {
+    this->Modification_ptCroisement();
     Chemin1 = LesChemins[j].GetChemin();
     Chemin2 = LesChemins[j+1].GetChemin();
     ville1 = Chemin1[ptCroisement];

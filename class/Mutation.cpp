@@ -4,15 +4,17 @@
 
 Mutation:: Mutation()
 {
+  nbChTouche = 0;
   nbMutations = 0;
   CheminsAMuter = 0;
   nbChemins = 0;
   tailleChemins = 0;
 }
 
-Mutation:: Mutation(int nMut, int nChem, int tChem, Chemin* Cam)
+Mutation:: Mutation(int nMut,int ntuch, int nChem, int tChem, Chemin* Cam)
 {
   nbMutations = nMut;
+  nbChTouche = ntuch;
   nbChemins = nChem;
   tailleChemins = tChem;
   CheminsAMuter = new Chemin[nChem];
@@ -28,10 +30,12 @@ Chemin* Mutation:: ResultatMutation()
 {
   int hasard1, hasard2, passage;
   int* Chem;
-  srand(time(NULL));
-  for (int j=0; j<nbChemins; j++)
+  int ind;
+  //srand(time(NULL));
+  for (int j=0; j<nbChTouche; j++)
     {
-      Chem = CheminsAMuter[j].GetChemin();
+      ind = rand()%(nbChemins);
+      Chem = CheminsAMuter[ind].GetChemin();
       for(int k=0; k<nbMutations; k++)
     	{
     	  hasard1 = 1 + rand()%(nbChemins-1);

@@ -5,28 +5,24 @@
 Selection_par_rang :: Selection_par_rang(int nombrec, Population Pop, int nbel): Selection(nbel)
 {
   nbelus = nbel;
-  Fitness fit(nombrec-nbelus,nombrec);
+  int val,somme;
+  Fitness fit(nbelus,nombrec);
   int* chem = this->GetindChemins();
   int* chem_temp = new int[nbel];
-  fit.MeilleursChemins(Pop, chem_temp);
-  bool test = true;
-  int passage = 0;
-  for(int i=0;i<nombrec;i++)
+  fit.PiresChemins(Pop, chem_temp);
+
+  somme = (nbelus* (nbelus-1)/2);
+  for(int i=0;i<nbelus;i++)
   {
-    test = true;
-    for(int j=0;j<nombrec-nbelus;j++)
+    val = rand()%somme;
+    for(int j=0;j<nbelus;j++)
     {
-      if (i == chem_temp[j])
+      val = val -j;
+      if (val <= 0)
       {
-        test = false;
+        chem[i] = chem_temp[j];
         break;
       }
     }
-    if (test)
-    {
-      chem[passage] = i;
-      passage++;
-    }
   }
-
 }

@@ -10,10 +10,10 @@ void generation_up(Population pop)
   Chemin* tempo,*tempo1;
   tempo = new Chemin[nbfaible];
   tempo1 = new Chemin[nbfaible];
-  for(int i=0;i<nbfaible;i++) tempo[i] = pop[((Selec.GetindChemins())[i])];
+  for(int i=0;i<nbfaible;i++) tempo[i] = pop[(Selec.GetindChemins()[i])];
   Croisement croise = Croisement(50, nbfaible, 100, tempo);
   for(int i=0;i<nbfaible;i++) tempo[i] = croise.Get_Chemins()[i];
-  Mutation mut = Mutation(50,nbfaible,100,tempo);
+  Mutation mut = Mutation(2,20,nbfaible,100,tempo);
   tempo1 = mut.ResultatMutation();
   int ind=0;
   for(int i=0;i<100;i++)
