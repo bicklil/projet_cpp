@@ -1,4 +1,4 @@
-#include "Gene.h"
+#include "Gene.h" 
 #include <iostream>
 
 Gene::Gene(){
