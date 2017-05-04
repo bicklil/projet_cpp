@@ -1,4 +1,4 @@
-#include"Chromosome.h"
+#include"Chromosome.h" 
 #include <iostream>
 
 Chromosome:: Chromosome()
