@@ -95,13 +95,17 @@ void dessin(void){
     {
       // Recupere le tableau des gènes.
       TabGenes = Pop[BestChemins[k]].Chromosome::GetGene();
-      cng_current_color(255, 110, 120);
       // Dessine de jolis cercles.
-      cng_circle(TabGenes[0].GetX(), TabGenes[0].GetY(), 6);
-      cng_current_color(255, 0, 0);
-      for(int i=1; i<VILLES-1; i++) cng_circle(TabGenes[i].GetX(), TabGenes[i].GetY(), 6);
-      cng_current_color(0, 0, 125);
-      cng_circle(TabGenes[VILLES-1].GetX(), TabGenes[VILLES-1].GetY(), 6);
+      for(int i=1; i<VILLES-1; i++){
+        if (TabGenes[i].GetGene() == Nville1){
+            cng_current_color(125,125,125);
+            cng_circle(TabGenes[i].GetX(), TabGenes[i].GetY(), 6);
+            }
+        else{
+            cng_current_color(255, 0, 0);
+            cng_circle(TabGenes[i].GetX(), TabGenes[i].GetY(), 6);
+            }
+          }
 
       for(int j=0; j<VILLES-1; j++)
         {
@@ -110,8 +114,6 @@ void dessin(void){
 	  cng_current_color(color[k * 3],color[k * 3 + 1],color[k * 3 + 2]);
 	  cng_line(G1.GetX(),G1.GetY(),G2.GetX(),G2.GetY());
 	}
-      cout << Pop[BestChemins[k]].GetDistance() << endl;
-
     }
     Pop.GenerationUp();
     //delete[] BestChemins;
@@ -121,7 +123,15 @@ void dessin(void){
     string s = to_string(Pop.GetGeneration());
     char const* pchar = s.c_str();
     cng_current_color(255,255,0);
-    cng_draw_string(pchar, 10, 10);
+    char const* txt = "Generation:";
+    cng_draw_string(txt, 10, 10);
+    cng_draw_string(pchar, 100, 10);
+
+    txt = "Distance:";
+    cng_draw_string(txt, 10, 30);
+    s = to_string(Pop[BestChemins[0]].GetDistance());
+    pchar = s.c_str();
+    cng_draw_string(pchar, 100, 30);
 
     cng_swap_screen();
     cng_clear_screen();

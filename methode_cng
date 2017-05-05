@@ -1,6 +1,0 @@
-mkdir cng
-tar zxvf cng.tgz -C cng/
-cd cng
-make libcng.a
-make demo1_cng
-./demo1_cng

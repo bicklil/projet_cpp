@@ -1,5 +1,5 @@
 CC= g++ -Wall
-OBJ= cng.o Algo_genetique.o Chemin.o Chromosome.o Croisement.o Elitisme.o Fitness.o Gene.o interface_graphique.o Individu.o Mutation.o Options.o Population.o Recreation.o Selection.o Selection_par_rang.o Selection_par_tournoi.o Selection_uniforme.o Ville.o
+OBJ= cng.o Algo_genetique.o Chemin.o Chromosome.o Croisement.o Fitness.o Gene.o interface_graphique.o Mutation.o Population.o Selection.o Selection_par_rang.o Selection_par_tournoi.o Selection_uniforme.o Ville.o
 
 main.exe: $(OBJ)
 	$(CC) $(OBJ) -g -o main.exe -L. -L/usr/include/GL -L/usr/X11R6/lib -lcng -lglut -lGLU -lGL -lX11 -lm
@@ -23,17 +23,11 @@ Chromosome.o: Chromosome.h Chromosome.cpp Croisement.h
 Croisement.o: Croisement.h Croisement.cpp
 	$(CC) -c Croisement.cpp
 
-Elitisme.o: Elitisme.h Elitisme.cpp Fitness.h Selection.h
-	$(CC) -c Elitisme.cpp
-
 Fitness.o: Fitness.h Fitness.cpp Chromosome.h
 	$(CC) -c Fitness.cpp
 
 Gene.o: Gene.h Gene.cpp
 	$(CC) -c Gene.cpp
-
-Individu.o: Individu.h Individu.cpp
-	$(CC) -c Individu.cpp
 
 interface_graphique.o: interface_graphique.h interface_graphique.cpp Chemin.h cng.h libcng.a
 	$(CC) -std=c++0x -c interface_graphique.cpp
@@ -41,14 +35,8 @@ interface_graphique.o: interface_graphique.h interface_graphique.cpp Chemin.h cn
 Mutation.o: Mutation.h Mutation.cpp
 	$(CC) -c Mutation.cpp
 
-Options.o: Options.h Options.cpp
-	$(CC) -c Options.cpp
-
 Population.o: Population.h Population.cpp Chromosome.h
 	$(CC) -std=c++0x -c Population.cpp
-
-Recreation.o: Recreation.h Recreation.cpp Chromosome.h Selection.h Ville.h
-	$(CC) -c Recreation.cpp
 
 Selection.o: Selection.h Selection.cpp
 	$(CC) -c Selection.cpp
@@ -72,3 +60,4 @@ clean:
 	rm -f *.o
 	rm -f *~
 	rm main.exe
+	rm libcng.a
