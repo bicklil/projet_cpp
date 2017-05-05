@@ -96,7 +96,7 @@ void dessin(void){
       // Recupere le tableau des gènes.
       TabGenes = Pop[BestChemins[k]].Chromosome::GetGene();
       // Dessine de jolis cercles.
-      for(int i=1; i<VILLES-1; i++){
+      for(int i=0; i<VILLES; i++){
         if (TabGenes[i].GetGene() == Nville1){
             cng_current_color(125,125,125);
             cng_circle(TabGenes[i].GetX(), TabGenes[i].GetY(), 6);
