@@ -4,6 +4,7 @@
 #include<math.h>
 #include"interface_graphique.h"
 #include"cng.h"
+#include<string>
 #include<unistd.h>
 #include<iostream>
 using namespace std;
@@ -116,6 +117,12 @@ void dessin(void){
     //delete[] BestChemins;
     usleep(10000);
     nb_chemins ++;
+
+    string s = to_string(Pop.GetGeneration());
+    char const* pchar = s.c_str();
+    cng_current_color(255,255,0);
+    cng_draw_string(pchar, 10, 10);
+
     cng_swap_screen();
     cng_clear_screen();
   }

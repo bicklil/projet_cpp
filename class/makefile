@@ -36,7 +36,7 @@ Individu.o: Individu.h Individu.cpp
 	$(CC) -c Individu.cpp
 
 interface_graphique.o: interface_graphique.h interface_graphique.cpp Chemin.h cng.h libcng.a
-	$(CC) -c interface_graphique.cpp
+	$(CC) -std=c++0x -c interface_graphique.cpp
 
 Mutation.o: Mutation.h Mutation.cpp
 	$(CC) -c Mutation.cpp

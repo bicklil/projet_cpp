@@ -65,5 +65,5 @@ Chemin* Population::GetChemin()
 
 int Population::GetGeneration()
 {
-  return Genereration;
+  return generation;
 }
