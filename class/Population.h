@@ -16,6 +16,7 @@ class Population
   void GenerationUp();
   Chemin& operator[](int);
   void actu_distance();
+  int GetGeneration();  
 };
 
 #endif

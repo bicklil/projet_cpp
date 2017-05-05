@@ -62,3 +62,8 @@ Chemin* Population::GetChemin()
 {
   return listeChemin;
 }
+
+int Population::GetGeneration()
+{
+  return Genereration;
+}
