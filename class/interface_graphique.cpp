@@ -94,9 +94,14 @@ void dessin(void){
     {
       // Recupere le tableau des gènes.
       TabGenes = Pop[BestChemins[k]].Chromosome::GetGene();
-      cng_current_color(255, 0, 0);
+      cng_current_color(255, 110, 120);
       // Dessine de jolis cercles.
-      for(int i=0; i<VILLES; i++) cng_circle(TabGenes[i].GetX(), TabGenes[i].GetY(), 6);
+      cng_circle(TabGenes[0].GetX(), TabGenes[0].GetY(), 6);
+      cng_current_color(255, 0, 0);
+      for(int i=1; i<VILLES-1; i++) cng_circle(TabGenes[i].GetX(), TabGenes[i].GetY(), 6);
+      cng_current_color(0, 0, 125);
+      cng_circle(TabGenes[VILLES-1].GetX(), TabGenes[VILLES-1].GetY(), 6);
+
       for(int j=0; j<VILLES-1; j++)
         {
 	  G1 = TabGenes[Pop[BestChemins[k]].GetChemin()[j]];
